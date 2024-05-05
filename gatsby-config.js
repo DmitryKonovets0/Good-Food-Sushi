@@ -6,5 +6,4 @@ module.exports = {
     title: `SushiGFood`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-styled-components"]
 };
