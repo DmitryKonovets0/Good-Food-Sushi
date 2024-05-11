@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import fish from '../../assets/images/fish.svg'
 const SectionInfo = styled.div`
-    height: 888px;
+    height: 920px;
     display: grid;
     grid-template-columns: repeat(2, 380px); ;
     column-gap: 41%;

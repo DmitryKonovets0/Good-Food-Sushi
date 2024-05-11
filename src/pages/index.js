@@ -6,6 +6,7 @@ import styled, {createGlobalStyle} from "styled-components";
 import Introduce from "./modules/introduce";
 import Info from "./modules/info";
 import TopPositions from "./modules/top-positions";
+import SushiBg from "./modules/sushi-bg";
 
 const Container = styled.div`
     width: 90%;
@@ -36,6 +37,7 @@ export default class IndexPage extends Component {
                     <Introduce/>
                     <Info/>
                     <TopPositions/>
+                    <SushiBg/>
                 </Container>
         )
     }

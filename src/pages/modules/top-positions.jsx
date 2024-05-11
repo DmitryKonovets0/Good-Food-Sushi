@@ -13,20 +13,19 @@ import fried from '../../assets/images/fried-roll.png';
 import pork from '../../assets/images/pork.png';
 import philadelphia from '../../assets/images/philadelphia.png';
 import roll from '../../assets/images/roll-with-crab.png';
-import sushiBackground from '../../assets/images/bg-sushi.png';
 
 const SectionPosition = styled.div`
-    height: 2274px;
+    height: 1181px;
     left: -76px;
+    margin-top: 460px;
     position: relative;
     width: 111.2%;
-    padding-top: 460px;
 `, Line = styled.img`
     position: absolute;
     width: 100%;
-    bottom: 836px;
+    bottom: 209px;
     &:first-child{
-        top: 300px;
+        top: -207px;
         bottom: 0;
     }
 `, Title = styled.h2`
@@ -112,15 +111,7 @@ const SectionPosition = styled.div`
     bottom: -20%;
     transform: rotateY(180deg) ;
        
-`, BackgroundSushi = styled.div`
-    background-image: url(${sushiBackground});
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    margin-top: 541px;
-    height: 577px;
-    `
-    , CustomNextArrow = ({ onClick }) => (
+`, CustomNextArrow = ({ onClick }) => (
     <div onClick={onClick}>
         <ImgR src={arrow} alt=""/>
     </div>
@@ -211,7 +202,6 @@ export default class TopPositions extends Component {
                     </Slider>
                 </WrapperSlider>
                 <Line src={line} alt=""/>
-                <BackgroundSushi/>
             </SectionPosition>
         );
     }
