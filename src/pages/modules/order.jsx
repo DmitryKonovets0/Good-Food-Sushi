@@ -1,0 +1,115 @@
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+import fish from '../../assets/images/fish.svg'
+
+const OrderSection = styled.div`
+    position: relative;
+    height: 547px;
+    margin-top: 300px;
+`, Heading = styled.h2`
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+`, Subheading = styled.h3`
+    margin-top: 50px;
+    font-size: 22px;
+    text-align: center;
+`, InputsWrapper = styled.div`
+    margin-left: 22%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 349px);
+    row-gap: 50px;
+    column-gap: 82px;
+`,InputText = styled.input`
+    width: 349px;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 40px;
+    border: solid 1px #11009e;
+    background-color: transparent;
+    padding-left: 7px;
+    color: #181818;
+    &::placeholder {
+        color: #181818;
+        opacity: 1; /* Firefox */
+    }
+`,Select = styled.select`
+    width: 349px;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 40px;
+    border: solid 1px #11009e;
+    background-color: transparent;
+    padding-left: 7px;
+    color: #181818;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+`, FishR = styled.img`
+    position: absolute;
+    transform: rotate(281deg);
+    right: -29%;
+    top: -55%;
+`, FishL = styled.img`
+    position: absolute;
+    transform: rotate(270deg);
+    left: -38%;
+    bottom: -48%;
+`, Button = styled.button`
+    width: 250px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #11009e;
+    font-size: 23px;
+    color: #f3f3f3;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px auto 0;
+`
+export default class Order extends Component {
+
+    render() {
+        return(
+            <OrderSection>
+                <Heading>
+                    Order delicious
+                </Heading>
+                <Subheading>
+                    Choose a date and time and our managers will contact <br/> you to complete the order
+                </Subheading>
+                <InputsWrapper>
+                        <InputText type="text" placeholder="Type your name" />
+                    <Select name="pets" id="pet-select">
+                        <option value="">Choose a date</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </Select>
+                        <InputText type="text" placeholder="Type your phone" />
+                    <Select name="pets" id="pet-select">
+                        <option value="">Choose a time</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </Select>
+
+                </InputsWrapper>
+                <FishR src={fish} alt="Image 1"/>
+                <FishL src={fish} alt="Image 1"/>
+                <Button>make an order</Button>
+            </OrderSection>
+        )
+    }
+}

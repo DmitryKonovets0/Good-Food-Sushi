@@ -56,14 +56,12 @@ const SectionPosition = styled.div`
     margin-top: 50px;
 `,
     WrapperItemsSlider = styled.div`
-    visibility: visible;
     position: relative;
-    overflow: visible;
     width: 413px !important;
     transition: .3s all;
     height: 572px;
     margin-bottom: 20px;
-    margin-left: 10px;
+    margin-left: 50px;
     border-radius: 13px;
     &:hover{
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1),
