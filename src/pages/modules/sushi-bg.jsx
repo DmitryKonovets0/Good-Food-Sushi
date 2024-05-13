@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import sushiBackground from '../../assets/images/bg-sushi.png';
 
 const SushiBgSection = styled.div`
-    margin-top: 300px;
+    margin-top: 120px;
     height: 683px;
     width: 112%;
     left: -6%;

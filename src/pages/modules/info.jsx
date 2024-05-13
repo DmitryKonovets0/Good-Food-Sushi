@@ -28,7 +28,7 @@ const SectionInfo = styled.div`
     position: absolute;
     left: 22%;
     top: ${props => props.fishVisible ? '8%' : '100%'};
-    transition: .5s all;
+    transition: .3s all;
 `
 export default class Info extends Component{
     constructor(fishVisible) {

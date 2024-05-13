@@ -95,8 +95,7 @@ export default class Blogs extends Component {
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
                         <SliderPicture src={main} alt="History" />
-                        <SlideTitle>The main components
-                            5 min</SlideTitle>
+                        <SlideTitle>The main components</SlideTitle>
                         <SlideTime>5 min</SlideTime>
                         <SlideIcon src={clock} alt=""/>
                     </WrapperItemsSlider>

@@ -56,14 +56,16 @@ const OrderSection = styled.div`
 `,
     FishR = styled.img`
     position: absolute;
-    transform: rotate(281deg);
+    transform: ${props => props.fish ? "rotate(281deg)" : "rotate(256deg)"};
     right: -29%;
     top: -55%;
+    transition: .5s all;
 `, FishL = styled.img`
     position: absolute;
-    transform: rotate(270deg);
+    transform: ${props => props.fish ? "rotate(270deg)" : "rotate(256deg)"};    
     left: -38%;
     bottom: -48%;
+    transition: .5s all;
 `, Button = styled.button`
     width: 250px;
     height: 65px;
@@ -85,6 +87,21 @@ const OrderSection = styled.div`
     }
 `
 export default class Order extends Component {
+    constructor() {
+        super();
+        this.state = {
+            fish:false
+        }
+    }
+    componentDidMount() {
+        setInterval(() => {
+            this.setState({ fish: true });
+        }, 1000); // интервал для установки fish в true
+
+        setInterval(() => {
+            this.setState({ fish: false });
+        }, 2000); // интервал для установки fish в false
+    }
 
     render() {
         return(
@@ -123,8 +140,8 @@ export default class Order extends Component {
                         <SelectArrow src={arrow} alt=""/>
                     </SelectWrapper>
                 </InputsWrapper>
-                <FishR src={fish} alt="Image 1"/>
-                <FishL src={fish} alt="Image 1"/>
+                <FishR src={fish} alt="Image 1" fish={this.state.fish} />
+                <FishL src={fish} alt="Image 1" fish={this.state.fish}/>
                 <Button>make an order</Button>
             </OrderSection>
         )

@@ -17,7 +17,7 @@ const FooterSection = styled.footer`
 `,Ul = styled.ul`
     margin-top: 56px;
     gap: 50px;
-    display: flex;   
+    display: flex;
     justify-content: center;
 `, Li = styled.li`
     font-size: 20px;
@@ -25,8 +25,6 @@ const FooterSection = styled.footer`
     transition: all 1s;
     a{
         color: #f3f3f3;
-        //&:hover{
-        //}
     }
 `
 export default class Footer extends Component {
