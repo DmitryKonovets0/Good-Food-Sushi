@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import fish from '../../assets/images/fish.svg'
 import arrow from '../../assets/icons/arrow-input.png'
-const OrderSection = styled.div`
+const OrderSection = styled.section`
     position: relative;
     height: 547px;
     margin-top: 300px;

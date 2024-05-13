@@ -14,7 +14,7 @@ import pork from '../../assets/images/pork.png';
 import philadelphia from '../../assets/images/philadelphia.png';
 import roll from '../../assets/images/roll-with-crab.png';
 
-const SectionPosition = styled.div`
+const SectionPosition = styled.section`
     height: 1181px;
     left: -76px;
     margin-top: 460px;

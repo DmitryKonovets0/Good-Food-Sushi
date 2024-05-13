@@ -3,7 +3,7 @@ import {Component} from "react";
 import styled from "styled-components";
 
 import fish from '../../assets/images/fish.svg'
-const SectionInfo = styled.div`
+const SectionInfo = styled.section`
     position: relative;
     margin-top: 300px;
     height: 920px;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import sushiBackground from '../../assets/images/bg-sushi.png';
 
-const SushiBgSection = styled.div`
+const SushiBgSection = styled.section`
     margin-top: 120px;
     height: 683px;
     width: 112%;
