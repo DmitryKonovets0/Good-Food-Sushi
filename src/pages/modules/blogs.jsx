@@ -23,7 +23,11 @@ const BlogsSection = styled.div`
     transition: .3s all;
     margin-left: 50px;
     width: 97% !important;
-    height: 398px; 
+    height: 100%;
+    padding-bottom: 10px;
+    border-radius: 13px;
+    &:hover{
+        box-shadow: -1px 2px 4px 0 rgba(28, 28, 28, 0.1), -3px 6px 7px 0 rgba(28, 28, 28, 0.09), -6px 14px 10px 0 rgba(28, 28, 28, 0.05), -11px 26px 11px 0 rgba(28, 28, 28, 0.01), -18px 40px 12px 0 rgba(28, 28, 28, 0);
 `,SliderPicture = styled.img`
     margin-bottom: 21px;
     width: 100%;
@@ -31,7 +35,7 @@ const BlogsSection = styled.div`
 `, SlideTitle = styled.h2`
     display: inline;
     font-size: 30px;
-    margin-left: .5%;
+    margin-left: 10px;
     text-align: left;
 `, SlideTime = styled.h3`
     position: absolute;
@@ -43,7 +47,7 @@ const BlogsSection = styled.div`
     position: absolute;
     width: 22px;
     right: 1%;
-    bottom: -29.6%;
+    bottom: 2.8%;
 `,CustomNextArrow = ({ onClick }) => (
     <div onClick={onClick}>
         <ImgR src={arrow} alt=""/>

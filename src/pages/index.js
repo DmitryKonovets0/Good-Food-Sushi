@@ -9,7 +9,7 @@ import Introduce from "./modules/introduce";
 import Info from "./modules/info";
 import TopPositions from "./modules/top-positions";
 import SushiBg from "./modules/sushi-bg";
-import Blogs from "./modules/Blogs";
+import Blogs from "./modules/blogs";
 import Order from "./modules/order";
 import Contacts from "./modules/contacts";
 
@@ -55,12 +55,31 @@ const Container = styled.div`
     }
 `
 export default class IndexPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visibility: false,
+            fishVisible: false
+        }
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        console.log(window.pageYOffset)
+        if (window.pageYOffset >= 950) {
+            this.setState({fishVisible: true});
+            // Выполнить действия, когда пользователь прокрутит на 1000 пикселей
+        }
+    }
     render() {
+
         return(
                 <Container>
                     <GlobalStyle/>
                     <Introduce/>
-                    <Info/>
+                    <Info fishVisible={this.state.fishVisible}/>
                     <TopPositions/>
                     <SushiBg/>
                     <Blogs/>

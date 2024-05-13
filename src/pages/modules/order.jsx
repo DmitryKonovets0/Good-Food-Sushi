@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import fish from '../../assets/images/fish.svg'
-
+import arrow from '../../assets/icons/arrow-input.png'
 const OrderSection = styled.div`
     position: relative;
     height: 547px;
@@ -35,7 +35,10 @@ const OrderSection = styled.div`
         color: #181818;
         opacity: 1; /* Firefox */
     }
-`,Select = styled.select`
+`,SelectWrapper = styled.div`
+    position: relative;
+`,
+    Select = styled.select`
     width: 349px;
     font-size: 22px;
     height: 40px;
@@ -46,7 +49,12 @@ const OrderSection = styled.div`
     color: #181818;
     -webkit-appearance: none;
     -moz-appearance: none;
-`, FishR = styled.img`
+`, SelectArrow = styled.img`
+    position: absolute;
+    top: 35%;
+    right: 3%;
+`,
+    FishR = styled.img`
     position: absolute;
     transform: rotate(281deg);
     right: -29%;
@@ -71,6 +79,10 @@ const OrderSection = styled.div`
     font-weight: bold;
     text-align: center;
     margin: 50px auto 0;
+    transition: .5s all;
+    &:hover {
+        background-color: #ADC7EF; /* Цвет при наведении с измененной прозрачностью */
+    }
 `
 export default class Order extends Component {
 
@@ -85,26 +97,31 @@ export default class Order extends Component {
                 </Subheading>
                 <InputsWrapper>
                         <InputText type="text" placeholder="Type your name" />
-                    <Select name="pets" id="pet-select">
-                        <option value="">Choose a date</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
-                    </Select>
+                    <SelectWrapper>
+                        <Select name="pets" id="pet-select">
+                            <option value="">Choose a date</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </Select>
+                        <SelectArrow src={arrow} alt=""/>
+                    </SelectWrapper>
                         <InputText type="text" placeholder="Type your phone" />
-                    <Select name="pets" id="pet-select">
-                        <option value="">Choose a time</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
-                    </Select>
-
+                    <SelectWrapper>
+                        <Select name="pets" id="pet-select">
+                            <option value="">Choose a time</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </Select>
+                        <SelectArrow src={arrow} alt=""/>
+                    </SelectWrapper>
                 </InputsWrapper>
                 <FishR src={fish} alt="Image 1"/>
                 <FishL src={fish} alt="Image 1"/>

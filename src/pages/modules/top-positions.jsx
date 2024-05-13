@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -20,11 +20,21 @@ const SectionPosition = styled.div`
     margin-top: 460px;
     position: relative;
     width: 111.2%;
-`, Line = styled.img`
-    position: absolute;
-    width: 100%;
-    bottom: 209px;
-    &:first-child{
+`;
+const moveFromLeft = keyframes`
+    from {
+        right: -91%; /* Начальное положение блока за пределами видимости слева */
+    }
+    to {
+        right: 1%;
+    }
+`,
+    Line = styled.img`
+        position: absolute;
+        width: 190%;
+        bottom: 209px;
+        animation: ${moveFromLeft} 10s infinite linear alternate; /* Применение анимации к блоку */
+        &:first-child{
         top: -207px;
         bottom: 0;
     }

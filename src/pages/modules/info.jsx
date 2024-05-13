@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import fish from '../../assets/images/fish.svg'
 const SectionInfo = styled.div`
+    position: relative;
+    margin-top: 300px;
     height: 920px;
     display: grid;
     grid-template-columns: repeat(2, 380px); ;
@@ -25,10 +27,15 @@ const SectionInfo = styled.div`
 `, Fish = styled.img`
     position: absolute;
     left: 22%;
+    top: ${props => props.fishVisible ? '8%' : '100%'};
+    transition: .5s all;
 `
 export default class Info extends Component{
-
+    constructor(fishVisible) {
+        super(fishVisible);
+}
     render() {
+        const { fishVisible } = this.props;
         return(
             <SectionInfo>
                 <WrapperInfoBlock>
@@ -39,7 +46,7 @@ export default class Info extends Component{
                         Your order is prepared on the day of delivery, and the products from which it is prepared are stored for a maximum of 3 days before preparation, which ensures the freshness of all ingredients
                     </Description>
                 </WrapperInfoBlock>
-                <Fish src={fish} alt=""/>
+                <Fish src={fish} alt="" fishVisible={fishVisible}/>
                 <WrapperInfoBlock>
                     <Heading>
                         A variety of tastes
