@@ -14,7 +14,7 @@ import bubble5 from "../../assets/icons/bubble-5.svg";
 
 const SectionIntroduce = styled.section`
     height: 763px;
-`, Header = styled.div`
+`, Header = styled.nav`
     width: 100%;
     height: 100px;
     display: grid;

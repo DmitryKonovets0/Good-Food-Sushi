@@ -12,6 +12,7 @@ import SushiBg from "./modules/sushi-bg";
 import Blogs from "./modules/blogs";
 import Order from "./modules/order";
 import Contacts from "./modules/contacts";
+import Footer from "./modules/footer";
 
 const Container = styled.div`
     width: 90%;
@@ -85,6 +86,7 @@ export default class IndexPage extends Component {
                     <Blogs/>
                     <Order/>
                     <Contacts/>
+                    <Footer/>
                 </Container>
         )
     }
