@@ -16,6 +16,8 @@ const SectionInfo = styled.section`
     flex-direction: column;
     width: 380px;
 `, Heading = styled.h2`
+    font-family: 'NeueMachinaRegular', sans-serif;
+
     color: #11009e;
     font-size: 30px;
     font-weight: bold;
@@ -37,7 +39,7 @@ export default class Info extends Component{
     render() {
         const { fishVisible } = this.props;
         return(
-            <SectionInfo>
+            <SectionInfo id='about'>
                 <WrapperInfoBlock>
                     <Heading>
                         Fresh products

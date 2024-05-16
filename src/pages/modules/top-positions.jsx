@@ -15,29 +15,29 @@ import philadelphia from '../../assets/images/philadelphia.png';
 import roll from '../../assets/images/roll-with-crab.png';
 
 const SectionPosition = styled.section`
+    padding-top: 170px;
     height: 1181px;
     left: -76px;
     margin-top: 460px;
     position: relative;
     width: 111.2%;
-`;
-const moveFromLeft = keyframes`
+    overflow: hidden;
+    `, moveFromLeft = keyframes`
     from {
-        right: -91%; /* Начальное положение блока за пределами видимости слева */
+        right: -91%; 
     }
     to {
         right: 1%;
     }
-`,
-    Line = styled.img`
-        position: absolute;
-        width: 190%;
-        bottom: 209px;
-        animation: ${moveFromLeft} 10s infinite linear alternate; /* Применение анимации к блоку */
-        &:first-child{
-        top: -207px;
-        bottom: 0;
-    }
+`, Line = styled.img`
+    position: absolute;
+    width: 190%;
+    bottom: 97px;
+    animation: ${moveFromLeft} 10s infinite linear alternate; 
+    &:first-child{
+    top: 0;
+    bottom: 0;
+}
 `, Title = styled.h2`
     display: inline;
     font-size: 30px;
@@ -67,12 +67,12 @@ const moveFromLeft = keyframes`
 `,
     WrapperItemsSlider = styled.div`
     position: relative;
-    width: 413px !important;
+    width: 444px !important;
     transition: .3s all;
-    height: 572px;
-    margin-bottom: 20px;
-    margin-left: 50px;
+    margin-bottom: 35px;
     border-radius: 13px;
+    margin-left: 50px;
+    height: 620px;
     &:hover{
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1),
         -1px 1px 3px 0 rgba(0, 0, 0, 0.1),
@@ -82,8 +82,7 @@ const moveFromLeft = keyframes`
         -25px 29px 11px 0 rgba(0, 0, 0, 0);
     }
 `, Picture = styled.img`
-    width: 413px;
-    border-radius: 13px;
+    width: 444px;
 `,
     Name = styled.h2`
     font-size: 30px;
@@ -97,26 +96,26 @@ const moveFromLeft = keyframes`
     margin-bottom: 20px;
 `, Weight = styled.h3`
     position: absolute;
-    bottom: 10px;
+    bottom: 11px;
     font-size: 22px;
     display: inline;
-    margin-left: 10px;
+    margin-left: 11px;
 `, Price = styled.h3`
-    bottom: 10px;
+    bottom: 11px;
     position: absolute;
     font-size: 22px;
     display: inline;
-    right: 10px; 
+    right: 11px; 
 `, ImgL = styled.img`
     position: absolute;
     left: 10%;
-    bottom: -20%;
+    bottom: -11%;
     cursor: pointer;
 `, ImgR = styled.img`
     cursor: pointer;
     position: absolute;
     right: 10%;  
-    bottom: -20%;
+    bottom: -11%;
     transform: rotateY(180deg) ;
        
 `, CustomNextArrow = ({ onClick }) => (
@@ -136,7 +135,7 @@ export default class TopPositions extends Component {
             const settings = {
                 infinite: false,
                 center: false,
-                slidesToShow: 3.1,
+                slidesToShow: 3.2,
                 slidesToScroll: 1,
                 swipeToSlide: true,
                 lazyLoad: true,
@@ -146,7 +145,7 @@ export default class TopPositions extends Component {
                 marginTop: '50px'
             };
         return (
-            <SectionPosition>
+            <SectionPosition id='menu'>
                 <Line src={line} alt="" />
                 <Title>This month's top positions</Title>
                 <SelectWrapper>

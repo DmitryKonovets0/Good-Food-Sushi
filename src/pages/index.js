@@ -4,6 +4,7 @@ import styled, {createGlobalStyle} from "styled-components";
 
 import NeueMachinaLight from "../assets/fonts/PPNeueMachina-InktrapLight.otf";
 import NeueMachinaRegular from "../assets/fonts/PPNeueMachina-InktrapRegular.otf";
+import Nunito from '../assets/fonts/Nunito-Medium.ttf'
 
 import Introduce from "./modules/introduce";
 import Info from "./modules/info";
@@ -30,7 +31,12 @@ const Container = styled.div`
         font-weight: normal;
         font-style: normal;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+    @font-face {
+        font-family: 'Nunito';
+        src: url(${Nunito}) format('opentype');
+        font-weight: 600;
+        font-style: normal;
+    }    
     *{
         box-sizing: border-box;
         padding: 0;
@@ -39,6 +45,8 @@ const Container = styled.div`
     }
     h2 {
         font-family: 'NeueMachinaRegular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
     }
     h3,li,div,input,button,select {
         font-family: 'Nunito', sans-serif;

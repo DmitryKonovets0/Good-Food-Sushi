@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import fish from '../../assets/images/fish.svg'
+import fish from '../../assets/images/fish-order.svg'
 import arrow from '../../assets/icons/arrow-input.png'
 const OrderSection = styled.section`
     position: relative;
@@ -56,15 +56,15 @@ const OrderSection = styled.section`
 `,
     FishR = styled.img`
     position: absolute;
-    transform: ${props => props.fish ? "rotate(281deg)" : "rotate(256deg)"};
-    right: -29%;
-    top: -55%;
+    transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
+    right: -25%;
+    top: -9%;
     transition: .5s all;
 `, FishL = styled.img`
     position: absolute;
-    transform: ${props => props.fish ? "rotate(270deg)" : "rotate(256deg)"};    
-    left: -38%;
-    bottom: -48%;
+    transform: ${props => props.fish ? "rotate(0deg)" : "rotate(-20deg)"};    
+    left: -29%;
+    bottom: -11%;
     transition: .5s all;
 `, Button = styled.button`
     width: 250px;
@@ -105,7 +105,7 @@ export default class Order extends Component {
 
     render() {
         return(
-            <OrderSection>
+            <OrderSection id='delivery'>
                 <Heading>
                     Order delicious
                 </Heading>
@@ -140,7 +140,7 @@ export default class Order extends Component {
                         <SelectArrow src={arrow} alt=""/>
                     </SelectWrapper>
                 </InputsWrapper>
-                <FishR src={fish} alt="Image 1" fish={this.state.fish} />
+                <FishR src={fish} alt="Image 1" fish={this.state.fish}/>
                 <FishL src={fish} alt="Image 1" fish={this.state.fish}/>
                 <Button>make an order</Button>
             </OrderSection>

@@ -13,7 +13,7 @@ import art from '../../assets/images/art-sushi.png'
 import clock from '../../assets/icons/clock.svg'
 const BlogsSection = styled.section`
     width: 111.2%;
-    height: 571px;
+    height: 741px;
     left: -76px;
     position: relative;
     margin-top: 169px;
@@ -79,7 +79,7 @@ export default class Blogs extends Component {
             prevArrow: <CustomPrevArrow />,
         };
         return(
-            <BlogsSection>
+            <BlogsSection id='articles'>
                 <Slider {...settings}>
                     <WrapperItemsSlider>
                         <SliderPicture src={historyOfSushi} alt="History" />

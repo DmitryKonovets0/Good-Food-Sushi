@@ -47,7 +47,7 @@ export default class Contacts extends Component {
 
     render() {
         return(
-            <ContactsSection>
+            <ContactsSection id="contacts">
                 <Fish src={fish} alt="fish" />
                 <Map src={map} alt="map" />
                 <div>

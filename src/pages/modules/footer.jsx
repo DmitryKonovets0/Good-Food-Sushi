@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import logo from '../../assets/icons/logo-footer.svg';
+import {Link} from "react-scroll";
 
 const FooterSection = styled.footer`
-    margin-top: 300px;
+    margin-top: 200px;
     position: relative;
     left: -5.6%;
     width: 111.3%;
@@ -34,11 +35,11 @@ export default class Footer extends Component {
             <FooterSection>
                 <Logo src={logo} alt=""/>
                 <Ul>
-                    <Li><a href='#'>About</a> </Li>
-                    <Li><a href='#'>Menu</a> </Li>
-                    <Li><a href='#'>Articles</a></Li>
-                    <Li><a href='#'>Delivery</a></Li>
-                    <Li><a href='#'>Contacts</a></Li>
+                    <Li><Link style={{ cursor: 'pointer' }} to="about" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Li>
+                    <Li><Link style={{ cursor: 'pointer' }} to="menu" spy={true} smooth={true} duration={500} offset={-50}>Menu</Link></Li>
+                    <Li><Link style={{ cursor: 'pointer' }} to="articles" spy={true} smooth={true} duration={500} offset={-100}>Articles</Link></Li>
+                    <Li><Link style={{ cursor: 'pointer' }} to="delivery" spy={true} smooth={true} duration={500} offset={-250}>Delivery</Link></Li>
+                    <Li><Link style={{ cursor: 'pointer' }} to="contacts" spy={true} smooth={true} duration={500} offset={-150}>Contacts</Link></Li>
                 </Ul>
             </FooterSection>
         )

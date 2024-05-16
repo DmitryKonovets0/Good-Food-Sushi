@@ -1,9 +1,10 @@
 import React from 'react';
 import {Component} from "react";
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { Link } from "react-scroll";
 
 import logo from "../../assets/icons/logo.svg";
-import fish from "../../assets/images/fish.svg";
+import fish from "../../assets/images/fish-with-bubble.svg";
 import delicious from "../../assets/images/delicious.svg";
 import holiday from "../../assets/images/holidays.svg";
 import bubble1 from "../../assets/icons/bubble-1.svg";
@@ -13,55 +14,47 @@ import bubble4 from "../../assets/icons/bubble-4.svg";
 import bubble5 from "../../assets/icons/bubble-5.svg";
 
 const SectionIntroduce = styled.section`
-    height: 763px;
+    height: 808px;
 `, Header = styled.nav`
     width: 100%;
     height: 100px;
-    display: grid;
-    grid-template-columns: 124px 550px 113px;
-    column-gap: 287px;
+    display: flex;
+    justify-content: space-between;
 `, Logo = styled.img`
     margin-top: 37px;
 `, Ul = styled.ul`
     margin-top: 56px;
-    display: flex;    
+    display: flex;
+    width: 530px;
+    justify-content: space-around;
 `, Li = styled.li`
     font-size: 20px;
     display: flex;
     align-items: flex-start;
-    width: 20%;
     transition: all 1s;
     a{
         &:hover{
         color: #11009e;
         }
     }
-`, LanguageToggle = styled.div`
-    display: flex;
-    margin-top: 54px;
-    gap: 10px;
-`, Language = styled.div`
-    height: 17px;
-    margin-top: 5px;
-    cursor: pointer;
-    &:hover{
-        color: #11009e;
-    }
-`, Line = styled.div`
-    background: #000;
-    width: 1px;
-    height: 30px;
-`, FishImg = styled.img`
-    transform: rotate(314deg);
+
+`, FishWrapper = styled.div`
+    width: 300px;
+    position: relative;
+    right: -50%;
+    top: 35px;
+`,
+    FishImg = styled.img`
     position: absolute;
-    right: ${props => props.visibility ? "-5%" : '-200%' };
-    top: 110px;
+    right: ${props => props.visibility ? "-174%" : '-350%' };
+    top: 173px;
+    z-index: -3;
     transition: .5s all;
 `, BubbleWrapper = styled.div`
     position: relative;
     height: 300px;
     width: 300px;
-    right: -50%;
+    right: -49%;
 `, FirstBubble = styled.img`
     position: absolute;
     right: ${props => props.visibility ? "46%" : '-300%'};
@@ -142,26 +135,23 @@ export default class Introduce extends Component {
                 <Header>
                     <Logo src={logo} alt=""/>
                     <Ul>
-                        <Li><a href='#'>About</a> </Li>
-                        <Li><a href='#'>Menu</a> </Li>
-                        <Li><a href='#'>Articles</a></Li>
-                        <Li><a href='#'>Delivery</a></Li>
-                        <Li><a href='#'>Contacts</a></Li>
+                        <Li><Link style={{ cursor: 'pointer' }} to="about" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Li>
+                        <Li><Link style={{ cursor: 'pointer' }} to="menu" spy={true} smooth={true} duration={500} offset={-50}>Menu</Link></Li>
+                        <Li><Link style={{ cursor: 'pointer' }} to="articles" spy={true} smooth={true} duration={500} offset={-50}>Articles</Link></Li>
+                        <Li><Link style={{ cursor: 'pointer' }} to="delivery" spy={true} smooth={true} duration={500} offset={-250}>Delivery</Link></Li>
+                        <Li><Link style={{ cursor: 'pointer' }} to="contacts" spy={true} smooth={true} duration={500} offset={-150}>Contacts</Link></Li>
                     </Ul>
-                    <LanguageToggle>
-                        <Language>ENG</Language>
-                        <Line></Line>
-                        <Language>UA</Language>
-                    </LanguageToggle>
                 </Header>
-                <FishImg src={fish} alt="" visibility={this.state.visibility}/>
-                <BubbleWrapper visibility={this.state.visibility}>
-                    <FirstBubble src={bubble1} alt="Bubble 1" visibility={this.state.visibility}/>
-                    <SecondBubble src={bubble2} alt="Bubble 2" visibility={this.state.visibility}/>
-                    <ThirdBubble src={bubble3} alt="Bubble 3" visibility={this.state.visibility}/>
-                    <FourthBubble src={bubble4} alt="Bubble 4" visibility={this.state.visibility}/>
-                    <FifthBubble src={bubble5} alt="Bubble 5" visibility={this.state.visibility}/>
-                </BubbleWrapper>
+               <FishWrapper>
+                   <FishImg src={fish} alt="" visibility={this.state.visibility}/>
+                   <BubbleWrapper visibility={this.state.visibility}>
+                       <FirstBubble src={bubble1} alt="Bubble 1" visibility={this.state.visibility}/>
+                       <SecondBubble src={bubble2} alt="Bubble 2" visibility={this.state.visibility}/>
+                       <ThirdBubble src={bubble3} alt="Bubble 3" visibility={this.state.visibility}/>
+                       <FourthBubble src={bubble4} alt="Bubble 4" visibility={this.state.visibility}/>
+                       <FifthBubble src={bubble5} alt="Bubble 5" visibility={this.state.visibility}/>
+                   </BubbleWrapper>
+               </FishWrapper>
                 <TextWrapper>
                     <Delicious src={delicious} alt="" visibility={this.state.visibility}/>
                     <Holiday src={holiday} alt="" visibility={this.state.visibility} />
