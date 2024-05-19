@@ -12,9 +12,7 @@ import symbiosis from '../../assets/images/symbiosis.png'
 import art from '../../assets/images/art-sushi.png'
 import clock from '../../assets/icons/clock.svg'
 const BlogsSection = styled.section`
-    width: 111.2%;
     height: 630px;
-    left: -76px;
     position: relative;
     margin-top: 169px;
 `, WrapperItemsSlider = styled.div`

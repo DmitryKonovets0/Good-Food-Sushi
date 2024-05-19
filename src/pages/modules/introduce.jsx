@@ -12,9 +12,12 @@ import bubble2 from "../../assets/icons/bubble-2.svg";
 import bubble3 from "../../assets/icons/bubble-3.svg";
 import bubble4 from "../../assets/icons/bubble-4.svg";
 import bubble5 from "../../assets/icons/bubble-5.svg";
-
 const SectionIntroduce = styled.section`
     height: 808px;
+    overflow: hidden;
+`, Container = styled.div`
+    width: 90%;
+    margin: 0 auto;
 `, Header = styled.nav`
     width: 100%;
     height: 100px;
@@ -42,7 +45,7 @@ const SectionIntroduce = styled.section`
     width: 300px;
     position: relative;
     right: -50%;
-    top: 35px;
+    top: -78%;
     @media (max-width: 1200px) {
         right: -38%;
     }
@@ -58,6 +61,7 @@ const SectionIntroduce = styled.section`
     height: 300px;
     width: 300px;
     right: -49%;
+    top: 16px;
 `, FirstBubble = styled.img`
     position: absolute;
     right: ${props => props.visibility ? "46%" : '-300%'};
@@ -90,8 +94,9 @@ const SectionIntroduce = styled.section`
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 169px;
+    top: -519px;
     gap: 30px;
+    left: 5%;
 `, Delicious = styled.img`
     top: -123px;
     transition: .5s all;
@@ -117,7 +122,7 @@ const SectionIntroduce = styled.section`
     background-color: #11009e ;
     font-size: 25px;
     color: #f3f3f3;
-    margin-top: 342px;
+    margin-top: 549px;
     margin-left: ${props => props.visibility ? "0" : '-50%' };
     transition: .5s all;
     &:hover {
@@ -145,33 +150,36 @@ export default class Introduce extends Component {
     render() {
         return(
             <SectionIntroduce>
-                <Header>
-                    <Logo src={logo} alt=""/>
-                    <Ul>
-                        <Li><Link style={{ cursor: 'pointer' }} to="about" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Li>
-                        <Li><Link style={{ cursor: 'pointer' }} to="menu" spy={true} smooth={true} duration={500} offset={-50}>Menu</Link></Li>
-                        <Li><Link style={{ cursor: 'pointer' }} to="articles" spy={true} smooth={true} duration={500} offset={-50}>Articles</Link></Li>
-                        <Li><Link style={{ cursor: 'pointer' }} to="delivery" spy={true} smooth={true} duration={500} offset={-250}>Delivery</Link></Li>
-                        <Li><Link style={{ cursor: 'pointer' }} to="contacts" spy={true} smooth={true} duration={500} offset={-150}>Contacts</Link></Li>
-                    </Ul>
-                </Header>
-               <FishWrapper>
-                   <FishImg src={fish} alt="" visibility={this.state.visibility}/>
-                   <BubbleWrapper visibility={this.state.visibility}>
-                       <FirstBubble src={bubble1} alt="Bubble 1" visibility={this.state.visibility}/>
-                       <SecondBubble src={bubble2} alt="Bubble 2" visibility={this.state.visibility}/>
-                       <ThirdBubble src={bubble3} alt="Bubble 3" visibility={this.state.visibility}/>
-                       <FourthBubble src={bubble4} alt="Bubble 4" visibility={this.state.visibility}/>
-                       <FifthBubble src={bubble5} alt="Bubble 5" visibility={this.state.visibility}/>
-                   </BubbleWrapper>
-               </FishWrapper>
+                <Container>
+                    <Header>
+                        <Logo src={logo} alt=""/>
+                        <Ul>
+                            <Li><Link style={{ cursor: 'pointer' }} to="about" spy={true} smooth={true} duration={500} offset={-50}>About</Link></Li>
+                            <Li><Link style={{ cursor: 'pointer' }} to="menu" spy={true} smooth={true} duration={500} offset={-50}>Menu</Link></Li>
+                            <Li><Link style={{ cursor: 'pointer' }} to="articles" spy={true} smooth={true} duration={500} offset={-50}>Articles</Link></Li>
+                            <Li><Link style={{ cursor: 'pointer' }} to="delivery" spy={true} smooth={true} duration={500} offset={-250}>Delivery</Link></Li>
+                            <Li><Link style={{ cursor: 'pointer' }} to="contacts" spy={true} smooth={true} duration={500} offset={-150}>Contacts</Link></Li>
+                        </Ul>
+                    </Header>
+
+                    <Button visibility={this.state.visibility}>
+                        make an order
+                    </Button>
+                </Container>
+                <FishWrapper>
+                    <FishImg src={fish} alt="" visibility={this.state.visibility}/>
+                    <BubbleWrapper visibility={this.state.visibility}>
+                        <FirstBubble src={bubble1} alt="Bubble 1" visibility={this.state.visibility}/>
+                        <SecondBubble src={bubble2} alt="Bubble 2" visibility={this.state.visibility}/>
+                        <ThirdBubble src={bubble3} alt="Bubble 3" visibility={this.state.visibility}/>
+                        <FourthBubble src={bubble4} alt="Bubble 4" visibility={this.state.visibility}/>
+                        <FifthBubble src={bubble5} alt="Bubble 5" visibility={this.state.visibility}/>
+                    </BubbleWrapper>
+                </FishWrapper>
                 <TextWrapper>
                     <Delicious src={delicious} alt="" visibility={this.state.visibility}/>
                     <Holiday src={holiday} alt="" visibility={this.state.visibility} />
                 </TextWrapper>
-                <Button visibility={this.state.visibility}>
-                    make an order
-                </Button>
             </SectionIntroduce>
         )
     }

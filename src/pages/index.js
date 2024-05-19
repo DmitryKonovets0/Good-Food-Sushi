@@ -15,10 +15,7 @@ import Order from "./modules/order";
 import Contacts from "./modules/contacts";
 import Footer from "./modules/footer";
 
-const Container = styled.div`
-    width: 90%;
-    margin: 0 auto;
-`, GlobalStyle = createGlobalStyle`
+ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'NeueMachinaLight';
         src: url(${NeueMachinaLight}) format('opentype');
@@ -56,7 +53,6 @@ const Container = styled.div`
     }
     body{
         background-color: #fdfff1;
-        overflow-x: hidden;
     }
     a{
         text-decoration: none;
@@ -85,7 +81,7 @@ export default class IndexPage extends Component {
     render() {
 
         return(
-                <Container>
+                <>
                     <GlobalStyle/>
                     <Introduce/>
                     <Info fishVisible={this.state.fishVisible}/>
@@ -95,7 +91,7 @@ export default class IndexPage extends Component {
                     <Order/>
                     <Contacts/>
                     <Footer/>
-                </Container>
+                </>
         )
     }
 

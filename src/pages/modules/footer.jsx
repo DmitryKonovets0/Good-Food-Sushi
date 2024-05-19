@@ -7,8 +7,6 @@ import {Link} from "react-scroll";
 const FooterSection = styled.footer`
     margin-top: 200px;
     position: relative;
-    left: -5.6%;
-    width: 111.3%;
     height: 227px;
     padding-top: 50px;
     background-color: #11009e;

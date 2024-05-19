@@ -10,17 +10,21 @@ import telegram from '../../assets/icons/telegram.svg'
 const ContactsSection = styled.section`
     height: 581px;
     position: relative;
+    margin-top: 400px;
+`,Container = styled.div`
+    width: 90%;
+    margin: 0 auto;
+`, Grid = styled.div`
     display: grid;
     grid-template-columns: 47vw 29.9vw;
     column-gap: 13vw;
-    margin-top: 400px;
     @media (max-width: 992px) {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         height: 752px;
     }
-`,Fish = styled.img`
+`,  Fish = styled.img`
     position: absolute;
     top: -37%;
     z-index: -3;
@@ -94,26 +98,30 @@ export default class Contacts extends Component {
     render() {
         return(
             <ContactsSection id="contacts">
+                <Container>
+                    <Grid>
+                        <Map src={map} alt="map" />
+                        <WrapperBlocks>
+                            <Heading>Contacts</Heading>
+                            <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
+                            <WrapperIcons>
+                                <IconLinks href="#">
+                                    <IconsLink src={phone} alt=""/>
+                                </IconLinks>
+                                <IconLinks href="#">
+                                    <IconsLink src={instagram} alt=""/>
+                                </IconLinks>
+                                <IconLinks href="#">
+                                    <IconsLink src={whatsapp} alt=""/>
+                                </IconLinks>
+                                <IconLinks href="#">
+                                    <IconsLink src={telegram} alt=""/>
+                                </IconLinks>
+                            </WrapperIcons>
+                        </WrapperBlocks>
+                    </Grid>
+                </Container>
                 <Fish src={fish} alt="fish" />
-                <Map src={map} alt="map" />
-                <WrapperBlocks>
-                    <Heading>Contacts</Heading>
-                    <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
-                    <WrapperIcons>
-                        <IconLinks href="#">
-                            <IconsLink src={phone} alt=""/>
-                        </IconLinks>
-                        <IconLinks href="#">
-                            <IconsLink src={instagram} alt=""/>
-                        </IconLinks>
-                        <IconLinks href="#">
-                            <IconsLink src={whatsapp} alt=""/>
-                        </IconLinks>
-                        <IconLinks href="#">
-                            <IconsLink src={telegram} alt=""/>
-                        </IconLinks>
-                    </WrapperIcons>
-                </WrapperBlocks>
             </ContactsSection>
         )
     }

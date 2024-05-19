@@ -10,12 +10,11 @@ const OrderSection = styled.section`
     margin-top: 300px;
     padding-bottom: 95px;
     overflow: hidden;
-    width: 112%;
-    left: -6%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+`,Container = styled.div`
+    width: 90%;
+    margin: 0 auto;
 `, Heading = styled.h2`
     text-align: center;
     margin-top: 40px;
@@ -31,6 +30,7 @@ const OrderSection = styled.section`
     grid-template-columns: repeat(2, 349px);
     row-gap: 50px;
     column-gap: 82px;
+    justify-content: center;
 `,InputText = styled.input`
     width: 349px;
     font-size: 22px;
@@ -123,43 +123,45 @@ export default class Order extends Component {
     render() {
         return(
             <OrderSection id='delivery'>
-                <Heading>
-                    Order delicious
-                </Heading>
-                <Subheading>
-                    Choose a date and time and our managers will contact <br/> you to complete the order
-                </Subheading>
-                <InputsWrapper>
+                <Container>
+                    <Heading>
+                        Order delicious
+                    </Heading>
+                    <Subheading>
+                        Choose a date and time and our managers will contact <br/> you to complete the order
+                    </Subheading>
+                    <InputsWrapper>
                         <InputText type="text" placeholder="Type your name" />
-                    <SelectWrapper>
-                        <Select name="pets" id="pet-select">
-                            <option value="">Choose a date</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
-                        </Select>
-                        <SelectArrow src={arrow} alt=""/>
-                    </SelectWrapper>
+                        <SelectWrapper>
+                            <Select name="pets" id="pet-select">
+                                <option value="">Choose a date</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="parrot">Parrot</option>
+                                <option value="spider">Spider</option>
+                                <option value="goldfish">Goldfish</option>
+                            </Select>
+                            <SelectArrow src={arrow} alt=""/>
+                        </SelectWrapper>
                         <InputText type="text" placeholder="Type your phone" />
-                    <SelectWrapper>
-                        <Select name="pets" id="pet-select">
-                            <option value="">Choose a time</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
-                        </Select>
-                        <SelectArrow src={arrow} alt=""/>
-                    </SelectWrapper>
-                </InputsWrapper>
-                <FishR src={fish} alt="Image 1" fish={this.state.fish}/>
-                <FishL src={fish} alt="Image 1" fish={this.state.fish}/>
-                <Button>make an order</Button>
+                        <SelectWrapper>
+                            <Select name="pets" id="pet-select">
+                                <option value="">Choose a time</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="parrot">Parrot</option>
+                                <option value="spider">Spider</option>
+                                <option value="goldfish">Goldfish</option>
+                            </Select>
+                            <SelectArrow src={arrow} alt=""/>
+                        </SelectWrapper>
+                    </InputsWrapper>
+                    <FishR src={fish} alt="Image 1" fish={this.state.fish}/>
+                    <FishL src={fish} alt="Image 1" fish={this.state.fish}/>
+                    <Button>make an order</Button>
+                </Container>
             </OrderSection>
         )
     }

@@ -17,10 +17,8 @@ import roll from '../../assets/images/roll-with-crab.png';
 const SectionPosition = styled.section`
     padding-top: 170px;
     height: 1181px;
-    left: -76px;
     margin-top: 460px;
     position: relative;
-    width: 111.2%;
     overflow: hidden;
     `, moveFromLeft = keyframes`
     from {
@@ -32,7 +30,7 @@ const SectionPosition = styled.section`
 `, Line = styled.img`
     position: absolute;
     width: 190%;
-    bottom: 97px;
+    bottom: 55px;
     animation: ${moveFromLeft} 10s infinite linear alternate; 
     &:first-child{
     top: 0;
