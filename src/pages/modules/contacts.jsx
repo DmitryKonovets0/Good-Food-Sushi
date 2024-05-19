@@ -14,6 +14,12 @@ const ContactsSection = styled.section`
     grid-template-columns: 47vw 29.9vw;
     column-gap: 13vw;
     margin-top: 400px;
+    @media (max-width: 992px) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 752px;
+    }
 `,Fish = styled.img`
     position: absolute;
     top: -37%;
@@ -22,28 +28,48 @@ const ContactsSection = styled.section`
     @media (max-width: 1200px) {
         width: 54%; 
     }
-`, WrapperBlocks = styled.div`
+    @media (max-width: 992px) {
+        top: -219px;
+        left: -294px;
+        transform: rotate(346deg);
+    }
+            
+`, Map = styled.img`
+            @media (max-width: 992px) {
+            margin-top: 41px;
+        }
+    `, WrapperBlocks = styled.div`
     display: flex;
     flex-direction: column;
+    @media (max-width: 992px) {
+        align-items: center;
+    }
 `,
     Heading = styled.h2`
     font-size: 30px;
     text-align: right;
-    //@media (max-width: 1359px) {
-    //    
-    //    
-    //}
+        @media (max-width: 992px) {
+            
+        }
 `,Subheading = styled.h3`
     margin-top: 50px;
     font-size: 22px;
     width: 25.8vw;
     text-align: right;
     margin-left: auto;
-
+    @media (max-width: 992px) {
+        margin-left: 0;
+        text-align: center;
+        width: 508px;
+    }
 `,WrapperIcons = styled.div`
     justify-content: space-between;
     display: flex;
     margin-top: auto;
+    @media (max-width: 992px) {
+        margin-top: 20px;
+        width: 350px;
+    }   
 `,IconLinks = styled.a`
     width: 80px;
     display: flex;
@@ -57,9 +83,10 @@ const ContactsSection = styled.section`
         height: 70px;
     }
 `, IconsLink = styled.img`
-            @media (max-width: 1200px) {    
-                height: 60%;
-            }
+    @media (max-width: 1200px) {    
+        height: 60%;
+    }
+    
     `
 export default class Contacts extends Component {
 
@@ -68,7 +95,7 @@ export default class Contacts extends Component {
         return(
             <ContactsSection id="contacts">
                 <Fish src={fish} alt="fish" />
-                <img src={map} alt="map" />
+                <Map src={map} alt="map" />
                 <WrapperBlocks>
                     <Heading>Contacts</Heading>
                     <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
