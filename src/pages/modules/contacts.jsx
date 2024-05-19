@@ -19,6 +19,9 @@ const ContactsSection = styled.section`
     top: -37%;
     z-index: -3;
     left: 217px;
+    @media (max-width: 1200px) {
+        width: 54%; 
+    }
 `, WrapperBlocks = styled.div`
     display: flex;
     flex-direction: column;
@@ -49,7 +52,15 @@ const ContactsSection = styled.section`
     height: 80px;
     border-radius: 100%;
     background-color: #11009e;
-`
+    @media (max-width: 1200px) {
+        width: 70px;
+        height: 70px;
+    }
+`, IconsLink = styled.img`
+            @media (max-width: 1200px) {    
+                height: 60%;
+            }
+    `
 export default class Contacts extends Component {
 
 
@@ -63,16 +74,16 @@ export default class Contacts extends Component {
                     <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
                     <WrapperIcons>
                         <IconLinks href="#">
-                            <img src={phone} alt=""/>
+                            <IconsLink src={phone} alt=""/>
                         </IconLinks>
                         <IconLinks href="#">
-                            <img src={instagram} alt=""/>
+                            <IconsLink src={instagram} alt=""/>
                         </IconLinks>
                         <IconLinks href="#">
-                            <img src={whatsapp} alt=""/>
+                            <IconsLink src={whatsapp} alt=""/>
                         </IconLinks>
                         <IconLinks href="#">
-                            <img src={telegram} alt=""/>
+                            <IconsLink src={telegram} alt=""/>
                         </IconLinks>
                     </WrapperIcons>
                 </WrapperBlocks>
