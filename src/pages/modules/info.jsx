@@ -20,6 +20,9 @@ const SectionInfo = styled.section`
     @media (max-width: 1200px) {
         font-size: 29px;
     }
+    //@media (max-width: 1024px) {
+    //    font-size: 27px;
+    //}
     color: #11009e;
     font-size: 30px;
     font-weight: bold;
@@ -38,6 +41,10 @@ const SectionInfo = styled.section`
     transition: .3s all;
     @media (max-width: 1200px) {
        left: 31%;
+    }
+    @media (max-width: 1024px) {
+        left: 28%;
+        width: 42%;
     }
 `
 export default class Info extends Component{

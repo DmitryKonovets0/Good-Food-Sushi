@@ -13,7 +13,7 @@ import art from '../../assets/images/art-sushi.png'
 import clock from '../../assets/icons/clock.svg'
 const BlogsSection = styled.section`
     width: 111.2%;
-    height: 741px;
+    height: 630px;
     left: -76px;
     position: relative;
     margin-top: 169px;
@@ -37,17 +37,26 @@ const BlogsSection = styled.section`
     font-size: 30px;
     margin-left: 10px;
     text-align: left;
-`, SlideTime = styled.h3`
+    @media (max-width: 1024px) {
+        font-size: 28px;
+    }
+`, WrapperTime = styled.div`
     position: absolute;
-    right: 5%;
-    display: inline;
-    margin-left: 53%;
+    right: 10px;
+    bottom: 13px;
+    width: 100px;
+    height: 22px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`,
+    SlideTime = styled.h3`
     font-size: 22px;
+    @media (max-width: 1024px) {
+        font-size: 20px;
+    }
 `, SlideIcon = styled.img`
-    position: absolute;
-    width: 22px;
-    right: 1%;
-    bottom: 2.8%;
+    width: 23px;
 `,CustomNextArrow = ({ onClick }) => (
     <div onClick={onClick}>
         <ImgR src={arrow} alt=""/>
@@ -84,32 +93,42 @@ export default class Blogs extends Component {
                     <WrapperItemsSlider>
                         <SliderPicture src={historyOfSushi} alt="History" />
                         <SlideTitle>History of sushi</SlideTitle>
-                        <SlideTime>5 min</SlideTime>
-                        <SlideIcon src={clock} alt=""/>
+                        <WrapperTime>
+                            <SlideTime>5 min</SlideTime>
+                            <SlideIcon src={clock} alt=""/>
+                        </WrapperTime>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
                         <SliderPicture src={misterious} alt="History" />
                         <SlideTitle>The mysterious appeal of...</SlideTitle>
-                        <SlideTime>5 min</SlideTime>
-                        <SlideIcon src={clock} alt=""/>
+                        <WrapperTime>
+                            <SlideTime>5 min</SlideTime>
+                            <SlideIcon src={clock} alt=""/>
+                        </WrapperTime>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
                         <SliderPicture src={main} alt="History" />
                         <SlideTitle>The main components</SlideTitle>
-                        <SlideTime>5 min</SlideTime>
-                        <SlideIcon src={clock} alt=""/>
+                        <WrapperTime>
+                            <SlideTime>5 min</SlideTime>
+                            <SlideIcon src={clock} alt=""/>
+                        </WrapperTime>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
                         <SliderPicture src={symbiosis} alt="History" />
                         <SlideTitle>Symbiosis of tradition and...</SlideTitle>
-                        <SlideTime>5 min</SlideTime>
-                        <SlideIcon src={clock} alt=""/>
+                        <WrapperTime>
+                            <SlideTime>5 min</SlideTime>
+                            <SlideIcon src={clock} alt=""/>
+                        </WrapperTime>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
                         <SliderPicture src={art} alt="History" />
                         <SlideTitle>The art of sushi chefs in...</SlideTitle>
-                        <SlideTime>5 min</SlideTime>
-                        <SlideIcon src={clock} alt=""/>
+                        <WrapperTime>
+                            <SlideTime>5 min</SlideTime>
+                            <SlideIcon src={clock} alt=""/>
+                        </WrapperTime>
                     </WrapperItemsSlider>
                 </Slider>
             </BlogsSection>

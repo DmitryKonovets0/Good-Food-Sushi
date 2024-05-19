@@ -55,7 +55,7 @@ const SectionPosition = styled.section`
     -moz-appearance: none;
 `, Arrow = styled.img`
     position: absolute;
-    top: 1px;
+    top: 3px;
     left: 88%;
     z-index: -5;
 `, SelectWrapper = styled.div`
@@ -71,7 +71,7 @@ const SectionPosition = styled.section`
     margin-bottom: 35px;
     border-radius: 13px;
     margin-left: 50px;
-    height: 620px;
+    height: auto;
     &:hover{
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1),
         -1px 1px 3px 0 rgba(0, 0, 0, 0.1),
@@ -86,12 +86,22 @@ const SectionPosition = styled.section`
     font-size: 30px;
     margin-top: 20px;
     margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @media (max-width: 1024px) {
+        font-size: 29px;
+    }
 `, Ingredient = styled.h3`
     font-size: 22px;
     margin-left: 10px;
     line-height: 1.2;
     margin-top: 20px;
     margin-bottom: 20px;
+    height: 130px;
+    @media (max-width: 1024px) {
+        font-size: 21px;
+    }
 `, Weight = styled.h3`
     position: absolute;
     bottom: 11px;

@@ -96,7 +96,7 @@ const SectionIntroduce = styled.section`
     top: -123px;
     transition: .5s all;
     position: absolute;
-    left: ${props => props.visibility ? "-1%" : '-62%' };
+    left: ${props => props.visibility ? "0" : '-90%' };
     @media (max-width: 1200px) {
         top: -103px;
         width: 70%;            
@@ -104,7 +104,7 @@ const SectionIntroduce = styled.section`
 `, Holiday = styled.img`
     position: absolute;
     transition: .5s all;
-    left: ${props => props.visibility ? "-1%" : '-300%' };
+    left: ${props => props.visibility ? "0" : '-300%' };
     @media (max-width: 1200px) {
         width: 70%;
     }

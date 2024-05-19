@@ -38,7 +38,7 @@ const OrderSection = styled.section`
     border-radius: 40px;
     border: solid 1px #11009e;
     background-color: transparent;
-    padding-left: 7px;
+    padding-left: 11px;
     color: #181818;
     &::placeholder {
         color: #181818;
@@ -54,7 +54,7 @@ const OrderSection = styled.section`
     border-radius: 40px;
     border: solid 1px #11009e;
     background-color: transparent;
-    padding-left: 7px;
+    padding-left: 11px;
     color: #181818;
     -webkit-appearance: none;
     -moz-appearance: none;
