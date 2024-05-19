@@ -5,10 +5,20 @@ import fish from '../../assets/images/fish-order.svg'
 import arrow from '../../assets/icons/arrow-input.png'
 const OrderSection = styled.section`
     position: relative;
-    height: 547px;
+    height: 684px;
+    padding-top: 40px;
     margin-top: 300px;
+    padding-bottom: 95px;
+    overflow: hidden;
+    width: 112%;
+    left: -6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `, Heading = styled.h2`
     text-align: center;
+    margin-top: 40px;
     font-size: 30px;
     font-weight: bold;
 `, Subheading = styled.h3`
@@ -16,7 +26,6 @@ const OrderSection = styled.section`
     font-size: 22px;
     text-align: center;
 `, InputsWrapper = styled.div`
-    margin-left: 22%;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 349px);
@@ -57,15 +66,23 @@ const OrderSection = styled.section`
     FishR = styled.img`
     position: absolute;
     transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
-    right: -25%;
-    top: -9%;
+    right: -20%;
+    top: 13%;
     transition: .5s all;
+    @media (max-width: 1200px) {
+        top: 15%;
+        transform: ${props => props.fish ? "rotate(-25deg)" : "rotate(-10deg)"};
+        width: 41%;
+    }
 `, FishL = styled.img`
     position: absolute;
     transform: ${props => props.fish ? "rotate(0deg)" : "rotate(-20deg)"};    
-    left: -29%;
-    bottom: -11%;
+    left: -24%;
+    bottom: -1%;
     transition: .5s all;
+    @media (max-width: 1200px) {
+        width: 41%;
+    }
 `, Button = styled.button`
     width: 250px;
     height: 65px;

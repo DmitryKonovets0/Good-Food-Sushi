@@ -43,10 +43,13 @@ const SectionIntroduce = styled.section`
     position: relative;
     right: -50%;
     top: 35px;
+    @media (max-width: 1200px) {
+        right: -38%;
+    }
 `,
     FishImg = styled.img`
     position: absolute;
-    right: ${props => props.visibility ? "-174%" : '-350%' };
+    right: ${props => props.visibility ? "-174%" : '-1550%' };
     top: 173px;
     z-index: -3;
     transition: .5s all;
@@ -94,10 +97,17 @@ const SectionIntroduce = styled.section`
     transition: .5s all;
     position: absolute;
     left: ${props => props.visibility ? "-1%" : '-62%' };
+    @media (max-width: 1200px) {
+        top: -103px;
+        width: 70%;            
+    }
 `, Holiday = styled.img`
     position: absolute;
     transition: .5s all;
     left: ${props => props.visibility ? "-1%" : '-300%' };
+    @media (max-width: 1200px) {
+        width: 70%;
+    }
 `,Button = styled.button`
     width: 250px;
     height: 65px;
@@ -112,6 +122,9 @@ const SectionIntroduce = styled.section`
     transition: .5s all;
     &:hover {
         background-color: #ADC7EF; /* Цвет при наведении с измененной прозрачностью */
+    }
+    @media (max-width: 1200px) {
+        margin-top: 292px;
     }
 `;
 

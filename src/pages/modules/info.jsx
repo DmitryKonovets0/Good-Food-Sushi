@@ -2,22 +2,24 @@ import React from 'react';
 import {Component} from "react";
 import styled from "styled-components";
 
-import fish from '../../assets/images/fish.svg'
+import fish from '../../assets/images/fish-info.svg'
 const SectionInfo = styled.section`
     position: relative;
     margin-top: 300px;
     height: 920px;
     display: grid;
-    grid-template-columns: repeat(2, 380px); ;
+    grid-template-columns: repeat(2, 30%); ;
     column-gap: 41%;
     row-gap: 126px ;
 `, WrapperInfoBlock = styled.div`
     display: flex;
     flex-direction: column;
-    width: 380px;
+    width: 97%;
 `, Heading = styled.h2`
     font-family: 'NeueMachinaRegular', sans-serif;
-
+    @media (max-width: 1200px) {
+        font-size: 29px;
+    }
     color: #11009e;
     font-size: 30px;
     font-weight: bold;
@@ -26,11 +28,17 @@ const SectionInfo = styled.section`
     margin-top: 20px;
     line-height: 1.2;
     text-align: left;
+    @media (max-width: 1200px) {
+        font-size: 21px;
+    }
 `, Fish = styled.img`
     position: absolute;
-    left: 22%;
+    left: 35%;
     top: ${props => props.fishVisible ? '8%' : '100%'};
     transition: .3s all;
+    @media (max-width: 1200px) {
+       left: 31%;
+    }
 `
 export default class Info extends Component{
     constructor(fishVisible) {

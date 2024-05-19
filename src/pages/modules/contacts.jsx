@@ -8,31 +8,39 @@ import instagram from '../../assets/icons/instagram.svg'
 import whatsapp from '../../assets/icons/whatsapp.svg'
 import telegram from '../../assets/icons/telegram.svg'
 const ContactsSection = styled.section`
-    height: 800px;
+    height: 581px;
     position: relative;
     display: grid;
-    grid-template-columns: 580px 394px;
-    column-gap: 28%;
+    grid-template-columns: 47vw 29.9vw;
+    column-gap: 13vw;
     margin-top: 400px;
 `,Fish = styled.img`
     position: absolute;
     top: -37%;
     z-index: -3;
     left: 217px;
-`,Map = styled.img`
-    display: block;
-`,Heading = styled.h2`
+`, WrapperBlocks = styled.div`
+    display: flex;
+    flex-direction: column;
+`,
+    Heading = styled.h2`
     font-size: 30px;
     text-align: right;
+    //@media (max-width: 1359px) {
+    //    
+    //    
+    //}
 `,Subheading = styled.h3`
     margin-top: 50px;
     font-size: 22px;
-    width: 394px;
+    width: 25.8vw;
     text-align: right;
+    margin-left: auto;
+
 `,WrapperIcons = styled.div`
     justify-content: space-between;
-    margin-top: 336px;
     display: flex;
+    margin-top: auto;
 `,IconLinks = styled.a`
     width: 80px;
     display: flex;
@@ -49,8 +57,8 @@ export default class Contacts extends Component {
         return(
             <ContactsSection id="contacts">
                 <Fish src={fish} alt="fish" />
-                <Map src={map} alt="map" />
-                <div>
+                <img src={map} alt="map" />
+                <WrapperBlocks>
                     <Heading>Contacts</Heading>
                     <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
                     <WrapperIcons>
@@ -67,7 +75,7 @@ export default class Contacts extends Component {
                             <img src={telegram} alt=""/>
                         </IconLinks>
                     </WrapperIcons>
-                </div>
+                </WrapperBlocks>
             </ContactsSection>
         )
     }

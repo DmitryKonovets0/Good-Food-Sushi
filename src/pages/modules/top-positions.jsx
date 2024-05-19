@@ -42,7 +42,7 @@ const SectionPosition = styled.section`
     display: inline;
     font-size: 30px;
     font-weight: 600;
-    margin-left: 70px;
+    margin-left: 77px;
 `, Select = styled.select`
     width: 280px;
     height: 40px;
@@ -59,7 +59,6 @@ const SectionPosition = styled.section`
     left: 88%;
     z-index: -5;
 `, SelectWrapper = styled.div`
-    margin-left: 45%;
     position: relative;
     display: inline;
 `, WrapperSlider = styled.div`
@@ -67,7 +66,7 @@ const SectionPosition = styled.section`
 `,
     WrapperItemsSlider = styled.div`
     position: relative;
-    width: 444px !important;
+    width: 30vw !important;
     transition: .3s all;
     margin-bottom: 35px;
     border-radius: 13px;
@@ -82,9 +81,8 @@ const SectionPosition = styled.section`
         -25px 29px 11px 0 rgba(0, 0, 0, 0);
     }
 `, Picture = styled.img`
-    width: 444px;
-`,
-    Name = styled.h2`
+    width: 30vw ;
+`, Name = styled.h2`
     font-size: 30px;
     margin-top: 20px;
     margin-left: 10px;
@@ -148,18 +146,20 @@ export default class TopPositions extends Component {
             <SectionPosition id='menu'>
                 <Line src={line} alt="" />
                 <Title>This month's top positions</Title>
-                <SelectWrapper>
-                    <Arrow src={arrowSelector} alt="" />
-                    <Select name="pets" id="pet-select">
-                        <option value="">Sort by</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="parrot">Parrot</option>
-                        <option value="spider">Spider</option>
-                        <option value="goldfish">Goldfish</option>
-                    </Select>
-                </SelectWrapper>
+                <div style={{position:"absolute", right:'77px', top: "166px"}}>
+                    <SelectWrapper>
+                        <Arrow src={arrowSelector} alt="" />
+                        <Select name="pets" id="pet-select">
+                            <option value="">Sort by</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </Select>
+                    </SelectWrapper>
+                </div>
                 <WrapperSlider>
                     <Slider {...settings}>
                         <WrapperItemsSlider>
