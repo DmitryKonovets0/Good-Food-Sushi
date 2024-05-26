@@ -12,7 +12,7 @@ import symbiosis from '../../assets/images/symbiosis.png'
 import art from '../../assets/images/art-sushi.png'
 import clock from '../../assets/icons/clock.svg'
 const BlogsSection = styled.section`
-    height: 630px;
+    height: 100%;
     position: relative;
     margin-top: 169px;
 `, WrapperItemsSlider = styled.div`
@@ -24,9 +24,13 @@ const BlogsSection = styled.section`
     height: 100%;
     padding-bottom: 10px;
     border-radius: 13px;
-    &:hover{
+    &:hover {
         box-shadow: -1px 2px 4px 0 rgba(28, 28, 28, 0.1), -3px 6px 7px 0 rgba(28, 28, 28, 0.09), -6px 14px 10px 0 rgba(28, 28, 28, 0.05), -11px 26px 11px 0 rgba(28, 28, 28, 0.01), -18px 40px 12px 0 rgba(28, 28, 28, 0);
-`,SliderPicture = styled.img`
+    }
+    @media (max-width: 768px) {
+        margin-left: 19px;
+    }
+`, SliderPicture = styled.img`
     margin-bottom: 21px;
     width: 100%;
     height: 118%; 
@@ -68,12 +72,18 @@ const BlogsSection = styled.section`
     left: 10%;
     bottom: -25%;
     cursor: pointer;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `, ImgR = styled.img`
     cursor: pointer;
     position: absolute;
     right: 10%;  
     bottom: -25%;
     transform: rotateY(180deg) ;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 export default class Blogs extends Component {
     render() {
@@ -84,6 +94,14 @@ export default class Blogs extends Component {
             swipeToSlide: true,
             nextArrow: <CustomNextArrow />,
             prevArrow: <CustomPrevArrow />,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1.2,
+                        slidesToScroll: 1,
+                    }
+                }]
         };
         return(
             <BlogsSection id='articles'>

@@ -7,26 +7,41 @@ const SectionInfo = styled.section`
     position: relative;
     margin-top: 300px;
     height: 920px;
+    @media (max-width: 768px) {
+        height: 1360px;
+    }
 `, Container = styled.div`
     width: 90%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        width: 96%;
+    }
 `, Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 30%); ;
     column-gap: 40%;
     row-gap: 126px ;
+    @media (max-width: 768px) {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+    }
 `, WrapperInfoBlock = styled.div`
     display: flex;
     flex-direction: column;
     width: 97%;
 `, Heading = styled.h2`
     font-family: 'NeueMachinaRegular', sans-serif;
-    @media (max-width: 1200px) {
-        font-size: 29px;
-    }
     color: #11009e;
     font-size: 30px;
     font-weight: bold;
+    @media (max-width: 1200px) {
+        font-size: 29px;
+    }
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+    
 `, Description = styled.div`
     font-size: 22px;
     margin-top: 20px;
@@ -34,6 +49,9 @@ const SectionInfo = styled.section`
     text-align: left;
     @media (max-width: 1200px) {
         font-size: 21px;
+    }
+    @media (max-width: 768px) {
+        font-size: 20px;
     }
 `, Fish = styled.img`
     position: absolute;
@@ -46,6 +64,10 @@ const SectionInfo = styled.section`
     @media (max-width: 1024px) {
         left: 28%;
         width: 42%;
+    }
+    @media (max-width: 768px) {
+        top: auto;
+        bottom: -10%;
     }
 `
 export default class Info extends Component{

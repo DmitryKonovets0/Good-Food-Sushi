@@ -14,6 +14,9 @@ const ContactsSection = styled.section`
 `,Container = styled.div`
     width: 90%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        width: 96%;
+    }
 `, Grid = styled.div`
     display: grid;
     grid-template-columns: 47vw 29.9vw;
@@ -30,31 +33,31 @@ const ContactsSection = styled.section`
     z-index: -3;
     left: 217px;
     @media (max-width: 1200px) {
-        width: 54%; 
+        width: 52%; 
     }
     @media (max-width: 992px) {
-        top: -219px;
-        left: -294px;
-        transform: rotate(346deg);
+        display: none;
     }
-            
 `, Map = styled.img`
-            @media (max-width: 992px) {
-            margin-top: 41px;
-        }
-    `, WrapperBlocks = styled.div`
+    @media (max-width: 992px) {
+        margin-top: 41px;
+    }
+    @media (max-width: 606px) {
+        width: 100%;
+    }
+`, WrapperBlocks = styled.div`
     display: flex;
     flex-direction: column;
     @media (max-width: 992px) {
         align-items: center;
     }
-`,
-    Heading = styled.h2`
+    @media (max-width: 768px) {
+        align-items: center;
+        width: 100%;
+    }
+`,Heading = styled.h2`
     font-size: 30px;
     text-align: right;
-        @media (max-width: 992px) {
-            
-        }
 `,Subheading = styled.h3`
     margin-top: 50px;
     font-size: 22px;
@@ -73,7 +76,7 @@ const ContactsSection = styled.section`
     @media (max-width: 992px) {
         margin-top: 20px;
         width: 350px;
-    }   
+    }
 `,IconLinks = styled.a`
     width: 80px;
     display: flex;
@@ -90,8 +93,7 @@ const ContactsSection = styled.section`
     @media (max-width: 1200px) {    
         height: 60%;
     }
-    
-    `
+`
 export default class Contacts extends Component {
 
 
@@ -100,10 +102,12 @@ export default class Contacts extends Component {
             <ContactsSection id="contacts">
                 <Container>
                     <Grid>
-                        <Map src={map} alt="map" />
+                            <Fish src={fish} alt="fish"/>
+                            <Map src={map} alt="map"/>
                         <WrapperBlocks>
                             <Heading>Contacts</Heading>
-                            <Subheading>If you have any questions, choose a convenient method of communication and let us help you.</Subheading>
+                            <Subheading>If you have any questions, choose a convenient method of communication and let
+                                us help you.</Subheading>
                             <WrapperIcons>
                                 <IconLinks href="#">
                                     <IconsLink src={phone} alt=""/>
@@ -121,7 +125,6 @@ export default class Contacts extends Component {
                         </WrapperBlocks>
                     </Grid>
                 </Container>
-                <Fish src={fish} alt="fish" />
             </ContactsSection>
         )
     }

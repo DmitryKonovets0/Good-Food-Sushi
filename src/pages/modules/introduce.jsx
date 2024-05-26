@@ -30,6 +30,12 @@ const SectionIntroduce = styled.section`
     display: flex;
     width: 530px;
     justify-content: space-around;
+    @media (max-width: 850px) {
+        width: 67%;
+    }
+    @media (max-width: 768px) {
+        display: none;    
+    }
 `, Li = styled.li`
     font-size: 20px;
     display: flex;
@@ -56,12 +62,23 @@ const SectionIntroduce = styled.section`
     top: 173px;
     z-index: -3;
     transition: .5s all;
+    @media (max-width: 768px) {
+        width: 400px;
+        right: ${props => props.visibility ? "-74%" : '-1550%' };
+        top: 245px;
+    }
 `, BubbleWrapper = styled.div`
     position: relative;
     height: 300px;
     width: 300px;
     right: -49%;
     top: 16px;
+    @media (max-width: 768px) {
+        height: 400px;
+        width: 220px;
+        right: -11%;
+        top: -24px;
+    }
 `, FirstBubble = styled.img`
     position: absolute;
     right: ${props => props.visibility ? "46%" : '-300%'};
@@ -97,6 +114,9 @@ const SectionIntroduce = styled.section`
     top: -519px;
     gap: 30px;
     left: 5%;
+    @media (max-width: 768px) {
+        top: -300px;
+    }
 `, Delicious = styled.img`
     top: -123px;
     transition: .5s all;
@@ -128,12 +148,7 @@ const SectionIntroduce = styled.section`
     &:hover {
         background-color: #ADC7EF; /* Цвет при наведении с измененной прозрачностью */
     }
-    @media (max-width: 1200px) {
-        margin-top: 292px;
-    }
 `;
-
-
 export default class Introduce extends Component {
     constructor() {
         super();

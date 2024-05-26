@@ -20,6 +20,9 @@ const SectionPosition = styled.section`
     margin-top: 460px;
     position: relative;
     overflow: hidden;
+    @media (max-width: 768px) {
+        padding-top: 109px;
+    }
     `, moveFromLeft = keyframes`
     from {
         right: -91%; 
@@ -31,7 +34,10 @@ const SectionPosition = styled.section`
     position: absolute;
     width: 190%;
     bottom: 55px;
-    animation: ${moveFromLeft} 10s infinite linear alternate; 
+    animation: ${moveFromLeft} 10s infinite linear alternate;
+    @media (max-width: 768px) {
+        bottom: 287px;
+    }
     &:first-child{
     top: 0;
     bottom: 0;
@@ -40,8 +46,14 @@ const SectionPosition = styled.section`
     display: inline;
     font-size: 30px;
     font-weight: 600;
-    margin-left: 77px;
+    margin-left: 49px;
+    @media (max-width: 862px) {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+    }
 `, Select = styled.select`
+    position: relative;
     width: 280px;
     height: 40px;
     border-radius: 40px;
@@ -51,15 +63,37 @@ const SectionPosition = styled.section`
     padding-left: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
-`, Arrow = styled.img`
-    position: absolute;
-    top: 3px;
-    left: 88%;
-    z-index: -5;
+    @media (max-width: 862px) {
+        width: 411px;
+        display: block;
+    }
 `, SelectWrapper = styled.div`
     position: relative;
-    display: inline;
-`, WrapperSlider = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:after{
+        content: '';
+        position: relative;
+        top: 0;
+        left: -30px;
+        background: url(${arrowSelector})  center center / cover no-repeat ;
+        height: 16px;
+        width: 16px;
+    }
+    @media (max-width: 862px) {
+        margin-left: 22px;
+    }
+`, WrapperWrapper = styled.div`
+    position: absolute;
+    right: 77px;
+    top: 166px;
+    @media (max-width: 862px) {
+        position: static;
+        margin-top: 20px;
+    }
+`,
+    WrapperSlider = styled.div`
     margin-top: 50px;
 `,
     WrapperItemsSlider = styled.div`
@@ -78,8 +112,15 @@ const SectionPosition = styled.section`
         -16px 19px 10px 0 rgba(0, 0, 0, 0.01),
         -25px 29px 11px 0 rgba(0, 0, 0, 0);
     }
+    @media (max-width: 768px) {
+        margin-left: 19px;
+        width: 46vw !important
+    }
 `, Picture = styled.img`
     width: 30vw ;
+    @media (max-width: 768px) {
+        width: 46vw
+    }
 `, Name = styled.h2`
     font-size: 30px;
     margin-top: 20px;
@@ -117,13 +158,18 @@ const SectionPosition = styled.section`
     left: 10%;
     bottom: -11%;
     cursor: pointer;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `, ImgR = styled.img`
     cursor: pointer;
     position: absolute;
     right: 10%;  
     bottom: -11%;
     transform: rotateY(180deg) ;
-       
+    @media (max-width: 768px) {
+        display: none;
+    }
 `, CustomNextArrow = ({ onClick }) => (
     <div onClick={onClick}>
         <ImgR src={arrow} alt=""/>
@@ -148,15 +194,22 @@ export default class TopPositions extends Component {
                 centeredSlides: true,
                 nextArrow: <CustomNextArrow />,
                 prevArrow: <CustomPrevArrow />,
-                marginTop: '50px'
+                marginTop: '50px',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    }]
             };
         return (
             <SectionPosition id='menu'>
                 <Line src={line} alt="" />
                 <Title>This month's top positions</Title>
-                <div style={{position:"absolute", right:'77px', top: "166px"}}>
+                <WrapperWrapper >
                     <SelectWrapper>
-                        <Arrow src={arrowSelector} alt="" />
                         <Select name="pets" id="pet-select">
                             <option value="">Sort by</option>
                             <option value="dog">Dog</option>
@@ -167,7 +220,7 @@ export default class TopPositions extends Component {
                             <option value="goldfish">Goldfish</option>
                         </Select>
                     </SelectWrapper>
-                </div>
+                </WrapperWrapper>
                 <WrapperSlider>
                     <Slider {...settings}>
                         <WrapperItemsSlider>

@@ -7,7 +7,7 @@ const OrderSection = styled.section`
     position: relative;
     height: 684px;
     padding-top: 40px;
-    margin-top: 300px;
+    margin-top: 453px;
     padding-bottom: 95px;
     overflow: hidden;
     display: flex;
@@ -31,8 +31,11 @@ const OrderSection = styled.section`
     row-gap: 50px;
     column-gap: 82px;
     justify-content: center;
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 304px);
+    } 
 `,InputText = styled.input`
-    width: 349px;
+    width: 100%;
     font-size: 22px;
     height: 40px;
     border-radius: 40px;
@@ -48,7 +51,7 @@ const OrderSection = styled.section`
     position: relative;
 `,
     Select = styled.select`
-    width: 349px;
+    width: 100%;
     font-size: 22px;
     height: 40px;
     border-radius: 40px;
@@ -65,18 +68,21 @@ const OrderSection = styled.section`
 `,
     FishR = styled.img`
     position: absolute;
-    transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
+    //transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
     right: -20%;
     top: 13%;
     transition: .5s all;
     @media (max-width: 1200px) {
         top: 15%;
-        transform: ${props => props.fish ? "rotate(-25deg)" : "rotate(-10deg)"};
+        //transform: ${props => props.fish ? "rotate(-25deg)" : "rotate(-10deg)"};
         width: 41%;
     }
-`, FishL = styled.img`
+    @media (max-width: 992px) {
+        top: 5%;
+    }
+    `, FishL = styled.img`
     position: absolute;
-    transform: ${props => props.fish ? "rotate(0deg)" : "rotate(-20deg)"};    
+    //transform: ${props => props.fish ? "rotate(0deg)" : "rotate(-20deg)"};    
     left: -24%;
     bottom: -1%;
     transition: .5s all;
