@@ -33,14 +33,14 @@ const SectionPosition = styled.section`
 `, Line = styled.img`
     position: absolute;
     width: 190%;
-    bottom: 55px;
     animation: ${moveFromLeft} 10s infinite linear alternate;
+    margin-top: 143px;
     @media (max-width: 768px) {
-        bottom: 287px;
+        margin-top: 76px;
     }
     &:first-child{
-    top: 0;
-    bottom: 0;
+        top: 0;
+    margin-top: 0;
 }
 `, Title = styled.h2`
     display: inline;
@@ -268,8 +268,8 @@ export default class TopPositions extends Component {
                             <Price>$9</Price>
                         </WrapperItemsSlider>
                     </Slider>
+                    <Line src={line} alt=""/>
                 </WrapperSlider>
-                <Line src={line} alt=""/>
             </SectionPosition>
         );
     }

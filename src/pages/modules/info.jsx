@@ -6,7 +6,7 @@ import fish from '../../assets/images/fish-info.svg'
 const SectionInfo = styled.section`
     position: relative;
     margin-top: 300px;
-    height: 920px;
+    min-height: 920px;
     @media (max-width: 768px) {
         height: 1360px;
     }

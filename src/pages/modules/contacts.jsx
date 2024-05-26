@@ -69,13 +69,19 @@ const ContactsSection = styled.section`
         text-align: center;
         width: 508px;
     }
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `,WrapperIcons = styled.div`
     justify-content: space-between;
     display: flex;
     margin-top: auto;
     @media (max-width: 992px) {
         margin-top: 20px;
-        width: 350px;
+        width: 573px;
+    }
+    @media (max-width: 606px) {
+        width: 100%;
     }
 `,IconLinks = styled.a`
     width: 80px;
@@ -89,9 +95,21 @@ const ContactsSection = styled.section`
         width: 70px;
         height: 70px;
     }
+    @media (max-width: 992px) {
+        width: 135px;
+        height: 135px;
+    }
+    @media (max-width: 606px) {
+        width: 22vw;
+        height: 22vw;
+    }
 `, IconsLink = styled.img`
     @media (max-width: 1200px) {    
         height: 60%;
+    }
+`, IconsLinkPhone = styled.img`
+    @media (max-width: 1200px) {
+        height: 50%;
     }
 `
 export default class Contacts extends Component {
@@ -110,7 +128,7 @@ export default class Contacts extends Component {
                                 us help you.</Subheading>
                             <WrapperIcons>
                                 <IconLinks href="#">
-                                    <IconsLink src={phone} alt=""/>
+                                    <IconsLinkPhone src={phone} alt=""/>
                                 </IconLinks>
                                 <IconLinks href="#">
                                     <IconsLink src={instagram} alt=""/>
