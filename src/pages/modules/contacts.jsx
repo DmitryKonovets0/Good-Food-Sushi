@@ -96,8 +96,8 @@ const ContactsSection = styled.section`
         height: 70px;
     }
     @media (max-width: 992px) {
-        width: 135px;
-        height: 135px;
+        width: 125px;
+        height: 125px;
     }
     @media (max-width: 606px) {
         width: 22vw;

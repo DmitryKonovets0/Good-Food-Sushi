@@ -7,26 +7,34 @@ import logo from "../../assets/icons/logo.svg";
 import fish from "../../assets/images/fish-with-bubble.svg";
 import delicious from "../../assets/images/delicious.svg";
 import holiday from "../../assets/images/holidays.svg";
+import deliciousMobile from "../../assets/images/delicious-mobile.svg";
 import bubble1 from "../../assets/icons/bubble-1.svg";
 import bubble2 from "../../assets/icons/bubble-2.svg";
 import bubble3 from "../../assets/icons/bubble-3.svg";
 import bubble4 from "../../assets/icons/bubble-4.svg";
 import bubble5 from "../../assets/icons/bubble-5.svg";
 const SectionIntroduce = styled.section`
-    height: 808px;
+    height: 759px;
     overflow: hidden;
+    position: relative;
+    @media (max-width: 768px) {
+        height: 1225px;
+    }
 `, Container = styled.div`
     width: 90%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        width: 97%;
+    }
 `, Header = styled.nav`
+    padding-top: 37px;
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `, Logo = styled.img`
-    margin-top: 37px;
 `, Ul = styled.ul`
-    margin-top: 56px;
     display: flex;
     width: 530px;
     justify-content: space-around;
@@ -47,11 +55,45 @@ const SectionIntroduce = styled.section`
         }
     }
 
-`, FishWrapper = styled.div`
+`, BurgerWrapper = styled.div`
+   display: none;
+    width: 30px;
+    height: 27px;
+    padding-top: 13px;
+    cursor: pointer;
+    @media (max-width: 768px) {
+        display: block;
+    }
+`, Burger = styled.div`
+    position: relative;
+    border-radius: 3px;
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    &:after{
+        border-radius: 3px;
+        position: absolute;
+        top: -10px;
+        content: '';
+        width: 30px;
+        height: 4px;
+        background-color: #000;
+    }
+    &:before{
+        border-radius: 3px;
+        position: absolute;
+        content: '';
+        top: 10px;
+        width: 30px;
+        height: 4px;
+        background-color: #000;
+    }
+`,
+    FishWrapper = styled.div`
     width: 300px;
     position: relative;
     right: -50%;
-    top: -78%;
+    top: -7px;
     @media (max-width: 1200px) {
         right: -38%;
     }
@@ -59,7 +101,7 @@ const SectionIntroduce = styled.section`
     FishImg = styled.img`
     position: absolute;
     right: ${props => props.visibility ? "-174%" : '-1550%' };
-    top: 173px;
+    top: 164px;
     z-index: -3;
     transition: .5s all;
     @media (max-width: 768px) {
@@ -72,7 +114,7 @@ const SectionIntroduce = styled.section`
     height: 300px;
     width: 300px;
     right: -49%;
-    top: 16px;
+    top: 0;
     @media (max-width: 768px) {
         height: 400px;
         width: 220px;
@@ -111,11 +153,11 @@ const SectionIntroduce = styled.section`
     position: relative;
     display: flex;
     flex-direction: column;
-    top: -519px;
+    top: 140px;
     gap: 30px;
     left: 5%;
     @media (max-width: 768px) {
-        top: -300px;
+        display: none;
     }
 `, Delicious = styled.img`
     top: -123px;
@@ -133,7 +175,21 @@ const SectionIntroduce = styled.section`
     @media (max-width: 1200px) {
         width: 70%;
     }
-`,Button = styled.button`
+`, TitleMobile = styled.img`
+    display: none;
+    position: absolute;
+    bottom: 159px;
+    left: 3%;
+    width: 425px;
+    margin-left: ${props => props.visibility ? "0" : '-150%' };
+    transition: .5s all;
+            @media (max-width: 768px) {
+        display: block;
+    }
+`,
+    Button = styled.button`
+    position: absolute;
+    bottom: 0;
     width: 250px;
     height: 65px;
     padding: 10px;
@@ -142,12 +198,14 @@ const SectionIntroduce = styled.section`
     background-color: #11009e ;
     font-size: 25px;
     color: #f3f3f3;
-    margin-top: 549px;
     margin-left: ${props => props.visibility ? "0" : '-50%' };
     transition: .5s all;
     &:hover {
         background-color: #ADC7EF; /* Цвет при наведении с измененной прозрачностью */
     }
+        @media (max-width: 768px) {
+            bottom: 78px;
+        }
 `;
 export default class Introduce extends Component {
     constructor() {
@@ -175,8 +233,10 @@ export default class Introduce extends Component {
                             <Li><Link style={{ cursor: 'pointer' }} to="delivery" spy={true} smooth={true} duration={500} offset={-250}>Delivery</Link></Li>
                             <Li><Link style={{ cursor: 'pointer' }} to="contacts" spy={true} smooth={true} duration={500} offset={-150}>Contacts</Link></Li>
                         </Ul>
+                        <BurgerWrapper>
+                            <Burger></Burger>
+                        </BurgerWrapper>
                     </Header>
-
                     <Button visibility={this.state.visibility}>
                         make an order
                     </Button>
@@ -191,9 +251,10 @@ export default class Introduce extends Component {
                         <FifthBubble src={bubble5} alt="Bubble 5" visibility={this.state.visibility}/>
                     </BubbleWrapper>
                 </FishWrapper>
+                <TitleMobile src={deliciousMobile} alt="Title" visibility={this.state.visibility} />
                 <TextWrapper>
-                    <Delicious src={delicious} alt="" visibility={this.state.visibility}/>
-                    <Holiday src={holiday} alt="" visibility={this.state.visibility} />
+                    <Delicious src={delicious} alt="Title" visibility={this.state.visibility}/>
+                    <Holiday src={holiday} alt="Title" visibility={this.state.visibility} />
                 </TextWrapper>
             </SectionIntroduce>
         )
