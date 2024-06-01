@@ -31,20 +31,28 @@ const OrderSection = styled.section`
     row-gap: 50px;
     column-gap: 82px;
     justify-content: center;
-            grid-template-areas: 
-  "name times"
-  "phone date";
+    grid-template-areas: 
+        "name times"
+        "phone date";
     @media (max-width: 992px) {
         grid-template-columns: repeat(2, 304px);
-    } 
-`,InputText = styled.input`
+    }
+    @media (max-width: 768px) {
+        grid-template-areas:
+        "name name"
+        "phone phone"
+        "times date";
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    `,InputText = styled.input`
     width: 100%;
     font-size: 22px;
     height: 40px;
     border-radius: 40px;
     border: solid 1px #11009e;
     background-color: transparent;
-    padding-left: 11px;
+    padding-left: 20px;
     color: #181818;
     &::placeholder {
         color: #181818;
@@ -60,14 +68,14 @@ const OrderSection = styled.section`
     border-radius: 40px;
     border: solid 1px #11009e;
     background-color: transparent;
-    padding-left: 11px;
+    padding-left: 20px;
     color: #181818;
     -webkit-appearance: none;
     -moz-appearance: none;
 `, SelectArrow = styled.img`
     position: absolute;
     top: 35%;
-    right: 3%;
+    right: 5%;
 `, NameInput = styled(InputText)`
   grid-area: name;
 `, PhoneInput = styled(InputText)`
@@ -78,7 +86,7 @@ const OrderSection = styled.section`
   grid-area: date;
 `, FishR = styled.img`
     position: absolute;
-    //transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
+    transform: ${props => props.fish ? "rotate(-20deg)" : "rotate(0deg)"};
     right: -20%;
     top: 13%;
     transition: .5s all;
