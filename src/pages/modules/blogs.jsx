@@ -11,6 +11,7 @@ import main from '../../assets/images/main.png'
 import symbiosis from '../../assets/images/symbiosis.png'
 import art from '../../assets/images/art-sushi.png'
 import clock from '../../assets/icons/clock.svg'
+
 const BlogsSection = styled.section`
     height: 100%;
     position: relative;
@@ -18,9 +19,9 @@ const BlogsSection = styled.section`
 `, WrapperItemsSlider = styled.div`
     margin-bottom: 20px;
     position: relative;
-    transition: .3s all;
-    margin-left: 50px;
-    width: 97% !important;
+            margin-left: 50px;
+            transition: .3s all;
+    width: 96% !important;
     height: 100%;
     padding-bottom: 10px;
     border-radius: 13px;
@@ -30,22 +31,33 @@ const BlogsSection = styled.section`
     @media (max-width: 768px) {
         margin-left: 19px;
     }
-`, SliderPicture = styled.img`
+`, LastSlide = styled(WrapperItemsSlider)`
+`,
+    FirstSlide = styled(WrapperItemsSlider)`
+
+    `,
+    SliderPicture = styled.img`
     margin-bottom: 21px;
     width: 100%;
     height: 118%; 
-`, SlideTitle = styled.h2`
-    display: inline;
+`, WrapperTitle = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`,
+    SlideTitle = styled.h2`
     font-size: 30px;
     margin-left: 10px;
     text-align: left;
+    width: 391px;
+    display: inline-block;
     @media (max-width: 1024px) {
         font-size: 28px;
     }
+    @media (max-width: 425px) {
+        width: 168px;
+    }
 `, WrapperTime = styled.div`
-    position: absolute;
-    right: 10px;
-    bottom: 13px;
     width: 100px;
     height: 22px;
     display: flex;
@@ -94,6 +106,8 @@ export default class Blogs extends Component {
             swipeToSlide: true,
             nextArrow: <CustomNextArrow />,
             prevArrow: <CustomPrevArrow />,
+            centerMode: true,
+            centerPadding: '35px',
             responsive: [
                 {
                     breakpoint: 768,
@@ -106,46 +120,56 @@ export default class Blogs extends Component {
         return(
             <BlogsSection id='articles'>
                 <Slider {...settings}>
-                    <WrapperItemsSlider>
+                    <FirstSlide>
                         <SliderPicture src={historyOfSushi} alt="History" />
-                        <SlideTitle>History of sushi</SlideTitle>
-                        <WrapperTime>
-                            <SlideTime>5 min</SlideTime>
-                            <SlideIcon src={clock} alt=""/>
-                        </WrapperTime>
+                        <WrapperTitle>
+                            <SlideTitle>History of sushi</SlideTitle>
+                                <WrapperTime>
+                                    <SlideTime>5 min</SlideTime>
+                                    <SlideIcon src={clock} alt=""/>
+                                </WrapperTime>
+                        </WrapperTitle>
+                    </FirstSlide>
+                    <WrapperItemsSlider>
+                        <SliderPicture src={misterious} alt="History"/>
+                        <WrapperTitle>
+                            <SlideTitle>The mysterious appeal of...</SlideTitle>
+                                <WrapperTime>
+                                    <SlideTime>5 min</SlideTime>
+                                    <SlideIcon src={clock} alt=""/>
+                                </WrapperTime>
+                        </WrapperTitle>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
-                        <SliderPicture src={misterious} alt="History" />
-                        <SlideTitle>The mysterious appeal of...</SlideTitle>
-                        <WrapperTime>
-                            <SlideTime>5 min</SlideTime>
-                            <SlideIcon src={clock} alt=""/>
-                        </WrapperTime>
+                        <SliderPicture src={main} alt="History"/>
+                        <WrapperTitle>
+                            <SlideTitle>The main components</SlideTitle>
+                                <WrapperTime>
+                                    <SlideTime>5 min</SlideTime>
+                                    <SlideIcon src={clock} alt=""/>
+                                </WrapperTime>
+                        </WrapperTitle>
                     </WrapperItemsSlider>
                     <WrapperItemsSlider>
-                        <SliderPicture src={main} alt="History" />
-                        <SlideTitle>The main components</SlideTitle>
-                        <WrapperTime>
-                            <SlideTime>5 min</SlideTime>
-                            <SlideIcon src={clock} alt=""/>
-                        </WrapperTime>
+                        <SliderPicture src={symbiosis} alt="History"/>
+                        <WrapperTitle>
+                            <SlideTitle>Symbiosis of tradition and...</SlideTitle>
+                                <WrapperTime>
+                                    <SlideTime>5 min</SlideTime>
+                                    <SlideIcon src={clock} alt=""/>
+                                </WrapperTime>
+                        </WrapperTitle>
                     </WrapperItemsSlider>
-                    <WrapperItemsSlider>
-                        <SliderPicture src={symbiosis} alt="History" />
-                        <SlideTitle>Symbiosis of tradition and...</SlideTitle>
-                        <WrapperTime>
-                            <SlideTime>5 min</SlideTime>
-                            <SlideIcon src={clock} alt=""/>
-                        </WrapperTime>
-                    </WrapperItemsSlider>
-                    <WrapperItemsSlider>
-                        <SliderPicture src={art} alt="History" />
-                        <SlideTitle>The art of sushi chefs in...</SlideTitle>
-                        <WrapperTime>
-                            <SlideTime>5 min</SlideTime>
-                            <SlideIcon src={clock} alt=""/>
-                        </WrapperTime>
-                    </WrapperItemsSlider>
+                    <LastSlide>
+                        <SliderPicture src={art} alt="History"/>
+                        <WrapperTitle>
+                            <SlideTitle>The art of sushi chefs in...</SlideTitle>
+                                <WrapperTime>
+                                    <SlideTime>5 min</SlideTime>
+                                    <SlideIcon src={clock} alt=""/>
+                                </WrapperTime>
+                        </WrapperTitle>
+                    </LastSlide>
                 </Slider>
             </BlogsSection>
         )

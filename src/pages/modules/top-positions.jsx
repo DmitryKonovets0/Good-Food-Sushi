@@ -60,7 +60,7 @@ const SectionPosition = styled.section`
     font-size: 22px;
     background: transparent;
     border: 2px solid #11009e;
-    padding-left: 10px;
+    padding-left: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
     @media (max-width: 862px) {
@@ -76,7 +76,7 @@ const SectionPosition = styled.section`
         content: '';
         position: relative;
         top: 0;
-        left: -30px;
+        left: -38px;
         background: url(${arrowSelector})  center center / cover no-repeat ;
         height: 16px;
         width: 16px;

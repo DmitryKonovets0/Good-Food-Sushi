@@ -13,8 +13,11 @@ const OrderSection = styled.section`
     display: flex;
     align-items: center;
 `,Container = styled.div`
-    width: 90%;
+    width: 97%;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 304px);
+    }
 `, Heading = styled.h2`
     text-align: center;
     margin-top: 40px;

@@ -31,11 +31,14 @@ const FooterSection = styled.footer`
     justify-content: space-around;
     &:first-child {
         width: 280px;
-        
+        @media (max-width: 768px) {
+            width: 80px;
+        }  
     }
     @media (max-width: 768px) {
         flex-direction: column;
         justify-content: space-around;
+        width: 80px;
     }
 `, Ul = styled.ul`
     margin-top: 56px;
