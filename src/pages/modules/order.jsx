@@ -47,8 +47,7 @@ const OrderSection = styled.section`
         "times date";
         column-gap: 20px;
         grid-template-columns: repeat(2, 1fr);
-    }
-    `,InputText = styled.input`
+    }`,InputText = styled.input`
     width: 100%;
     font-size: 22px;
     height: 40px;
@@ -60,6 +59,9 @@ const OrderSection = styled.section`
     &::placeholder {
         color: #181818;
         opacity: 1; /* Firefox */
+    }
+    @media (max-width: 450px) {
+        font-size: 21px;
     }
 `,SelectWrapper = styled.div`
     position: relative;
@@ -75,6 +77,9 @@ const OrderSection = styled.section`
     color: #181818;
     -webkit-appearance: none;
     -moz-appearance: none;
+    @media (max-width: 450px) {
+        font-size: 21px;
+    }
 `, SelectArrow = styled.img`
     position: absolute;
     top: 35%;

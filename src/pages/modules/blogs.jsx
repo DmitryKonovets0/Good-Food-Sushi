@@ -32,10 +32,10 @@ const BlogsSection = styled.section`
         margin-left: 19px;
     }
 `, LastSlide = styled(WrapperItemsSlider)`
+    
 `,
     FirstSlide = styled(WrapperItemsSlider)`
-
-    `,
+`,
     SliderPicture = styled.img`
     margin-bottom: 21px;
     width: 100%;
@@ -49,10 +49,13 @@ const BlogsSection = styled.section`
     font-size: 30px;
     margin-left: 10px;
     text-align: left;
-    width: 391px;
     display: inline-block;
     @media (max-width: 1024px) {
         font-size: 28px;
+    }
+    @media (max-width: 768px) {
+        width: 70%;
+        font-size: 26px;
     }
     @media (max-width: 425px) {
         width: 168px;
@@ -114,6 +117,8 @@ export default class Blogs extends Component {
                     settings: {
                         slidesToShow: 1.2,
                         slidesToScroll: 1,
+                        centerMode: true,
+                        centerPadding: '10px',
                     }
                 }]
         };
@@ -174,5 +179,4 @@ export default class Blogs extends Component {
             </BlogsSection>
         )
     }
-
 }

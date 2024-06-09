@@ -34,7 +34,7 @@ const SectionPosition = styled.section`
     position: absolute;
     width: 190%;
     animation: ${moveFromLeft} 10s infinite linear alternate;
-    margin-top: 143px;
+    margin-top: 120px;
     @media (max-width: 768px) {
         margin-top: 76px;
     }
@@ -137,22 +137,24 @@ const SectionPosition = styled.section`
     line-height: 1.2;
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 130px;
+    min-height: 130px;
     @media (max-width: 1024px) {
         font-size: 21px;
     }
-`, Weight = styled.h3`
-    position: absolute;
-    bottom: 11px;
+`,  WrapperWeight = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    width: 97%;
+    margin-bottom: 5px;
+`,
+    Weight = styled.h3`
     font-size: 22px;
     display: inline;
     margin-left: 11px;
 `, Price = styled.h3`
-    bottom: 11px;
-    position: absolute;
     font-size: 22px;
     display: inline;
-    right: 11px; 
 `, ImgL = styled.img`
     position: absolute;
     left: 10%;
@@ -226,46 +228,56 @@ export default class TopPositions extends Component {
                         <WrapperItemsSlider>
                             <Picture src={variety} alt="Image 1"/>
                             <Name>Variety set</Name>
-                            <Ingredient>Nigiri with salmon, eel, shrimp, tiger prawn, octopus, mussels,
-                                mango</Ingredient>
-                            <Weight>420 g</Weight>
-                            <Price>$12</Price>
+                            <Ingredient>Nigiri with salmon, eel, shrimp, tiger prawn, octopus, mussels, mango</Ingredient>
+                            <WrapperWeight>
+                                <Weight>420 g</Weight>
+                                <Price>$12</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                         <WrapperItemsSlider>
                             <Picture src={bowl} alt="Image 1"/>
                             <Name>Bowl with beef</Name>
-                            <Ingredient>Rice noodles, chicken eggs, beef, corn, seaweed, cucumbers, baby
-                                onions</Ingredient>
-                            <Weight>350 g</Weight>
-                            <Price>$7</Price>
+                            <Ingredient>Rice noodles, chicken eggs, beef, corn, seaweed, cucumbers, baby onions</Ingredient>
+                            <WrapperWeight>
+                                <Weight>350 g</Weight>
+                                <Price>$7</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                         <WrapperItemsSlider>
                             <Picture src={fried} alt="Image 1" />
                             <Name>Fried roll</Name>
                             <Ingredient>Roll with shrimp, rolls with salmon, cream cheese cap</Ingredient>
-                            <Weight>300 g</Weight>
-                            <Price>$8</Price>
+                            <WrapperWeight>
+                                <Weight>300 g</Weight>
+                                <Price>$8</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                         <WrapperItemsSlider>
                             <Picture src={pork} alt="Image 1" />
                             <Name>Pork carpaccio</Name>
                             <Ingredient>Pork tenderloin, arugula, parmesan, lemon juice, olive oil</Ingredient>
-                            <Weight>120 g</Weight>
-                            <Price>$5</Price>
+                            <WrapperWeight>
+                                <Weight>120 g</Weight>
+                                <Price>$5</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                         <WrapperItemsSlider>
                             <Picture src={philadelphia} alt="Image 1" />
                             <Name>Philadelphia classic</Name>
                             <Ingredient>Cheese cream, salmon, avocado, cucumber, rice, nori</Ingredient>
-                            <Weight>350 g</Weight>
-                            <Price>$5</Price>
+                            <WrapperWeight>
+                                <Weight>350 g</Weight>
+                                <Price>$5</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                         <WrapperItemsSlider>
                             <Picture src={roll} alt="Image 1" />
                             <Name>Roll with crab</Name>
                             <Ingredient>Rice, crab meat, avocado, cucumber, nori</Ingredient>
-                            <Weight>250 g</Weight>
-                            <Price>$9</Price>
+                            <WrapperWeight>
+                                <Weight>250 g</Weight>
+                                <Price>$9</Price>
+                            </WrapperWeight>
                         </WrapperItemsSlider>
                     </Slider>
                     <Line src={line} alt=""/>

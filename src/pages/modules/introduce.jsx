@@ -97,6 +97,10 @@ const SectionIntroduce = styled.section`
     @media (max-width: 1200px) {
         right: -38%;
     }
+    @media (max-width: 600px) {
+        right: 0;
+        left: 13%;
+    }
 `,
     FishImg = styled.img`
     position: absolute;
@@ -108,6 +112,9 @@ const SectionIntroduce = styled.section`
         width: 400px;
         right: ${props => props.visibility ? "-74%" : '-1550%' };
         top: 245px;
+    }
+    @media (max-width: 600px) {
+        width: 360px;
     }
 `, BubbleWrapper = styled.div`
     position: relative;
@@ -138,6 +145,9 @@ const SectionIntroduce = styled.section`
     right: ${props => props.visibility ? "48%" : '-1200%'};
     transition: .5s all;
     top: 54%;
+    @media (max-width: 600px) {
+        width: 9%;
+    }
 `, FourthBubble = styled.img`
     position: absolute;
     right: ${props => props.visibility ? "20%" : '-2000%'};
@@ -186,6 +196,9 @@ const SectionIntroduce = styled.section`
             @media (max-width: 768px) {
         display: block;
     }
+    @media (max-width: 600px) {
+        width: 337px;
+    }
 `,
     Button = styled.button`
     position: absolute;
@@ -198,7 +211,7 @@ const SectionIntroduce = styled.section`
     background-color: #11009e ;
     font-size: 25px;
     color: #f3f3f3;
-    margin-left: ${props => props.visibility ? "0" : '-50%' };
+    margin-left: ${props => props.visibility ? "0" : '-150%' };
     transition: .5s all;
     &:hover {
         background-color: #ADC7EF; /* Цвет при наведении с измененной прозрачностью */
